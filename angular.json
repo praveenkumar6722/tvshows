@@ -1,6 +1,224 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {}
+  "newProjectRoot": "features",
+  "projects": {
+    "tvshows-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/tvshows-app",
+      "sourceRoot": "projects/tvshows-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/tvshows-app",
+            "index": "projects/tvshows-app/src/index.html",
+            "main": "projects/tvshows-app/src/main.ts",
+            "polyfills": "projects/tvshows-app/src/polyfills.ts",
+            "tsConfig": "projects/tvshows-app/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/tvshows-app/src/favicon.ico",
+              "projects/tvshows-app/src/assets"
+            ],
+            "styles": ["projects/tvshows-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/tvshows-app/src/environments/environment.ts",
+                  "with": "projects/tvshows-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "tvshows-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "tvshows-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "tvshows-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tvshows-app/src/test.ts",
+            "polyfills": "projects/tvshows-app/src/polyfills.ts",
+            "tsConfig": "projects/tvshows-app/tsconfig.spec.json",
+            "karmaConfig": "projects/tvshows-app/karma.conf.js",
+            "assets": [
+              "projects/tvshows-app/src/favicon.ico",
+              "projects/tvshows-app/src/assets"
+            ],
+            "styles": ["projects/tvshows-app/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tvshows-app/tsconfig.app.json",
+              "projects/tvshows-app/tsconfig.spec.json",
+              "projects/tvshows-app/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/tvshows-app/e2e/protractor.conf.js",
+            "devServerTarget": "tvshows-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tvshows-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "core": {
+      "projectType": "library",
+      "root": "core",
+      "sourceRoot": "core/src",
+      "prefix": "core",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "core/tsconfig.lib.json",
+            "project": "core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "core/src/test.ts",
+            "tsConfig": "core/tsconfig.spec.json",
+            "karmaConfig": "core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["core/tsconfig.lib.json", "core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "tvshows": {
+      "projectType": "library",
+      "root": "features/tvshows",
+      "sourceRoot": "features/tvshows/src",
+      "prefix": "f-tvshows",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "features/tvshows/tsconfig.lib.json",
+            "project": "features/tvshows/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "features/tvshows/src/test.ts",
+            "tsConfig": "features/tvshows/tsconfig.spec.json",
+            "karmaConfig": "features/tvshows/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "features/tvshows/tsconfig.lib.json",
+              "features/tvshows/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "navigation": {
+      "projectType": "library",
+      "root": "features/navigation",
+      "sourceRoot": "features/navigation/src",
+      "prefix": "f-navigation",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "features/navigation/tsconfig.lib.json",
+            "project": "features/navigation/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "features/navigation/src/test.ts",
+            "tsConfig": "features/navigation/tsconfig.spec.json",
+            "karmaConfig": "features/navigation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "features/navigation/tsconfig.lib.json",
+              "features/navigation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "tvshows-app"
 }
