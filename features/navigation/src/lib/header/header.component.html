@@ -1,1 +1,69 @@
-<p>header works!</p>
+<mat-toolbar color="accent">
+  <div fxShow="true"
+       fxHide.gt-sm="true">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <a mat-button
+     routerLink="/home">
+
+    <span fxHide.gt-sm="true"
+          class="material-icons">tv
+    </span>
+    <span fxShow="true"
+          fxHide.lt-md="true">TV Shows</span>
+  </a>
+
+  <!-- <div fxShow="true"
+         fxHide.lt-md="true">
+      <a mat-button
+         routerLink="/">Kids</a>
+    </div> -->
+  <div fxFlex
+       fxLayout
+       fxLayoutAlign="end">
+    <mat-form-field floatLabel='never'>
+      <input type="text"
+             matInput
+             placeholder="search"
+             [(ngModel)]="searchString"
+             (keyup.enter)="search()"
+             #value>
+      <mat-icon matSuffix
+                class="icon-search"
+                (click)="search()">search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div fxShow="true"
+       fxHide.lt-md="true">
+    <mat-icon fxHide.xs
+              class="icon-account">account_circle</mat-icon>
+  </div>
+
+</mat-toolbar>
+<!--
+
+      <button mat-icon-button
+            (click)="sidenav.toggle()">
+
+  <mat-sidenav-container fxFlexFill
+                       class="example-container">
+
+  <mat-sidenav color="primary"
+               #sidenav
+               fxLayout="column"
+               mode="over"
+               opened="false"
+               fxHide.gt-sm="true">
+    <div fxLayout="column">
+      <a mat-button
+         routerLink="/home">TV Shows</a>
+      <a mat-button
+         routerLink="/search">Account</a>
+      <a mat-button
+         routerLink="/">Movies</a>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container> -->

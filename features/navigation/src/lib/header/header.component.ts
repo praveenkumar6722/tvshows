@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public searchString = '';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  public search() {
+    console.log('search clicked - ' + this.searchString);
+    this.searchString = '';
+  }
 }
