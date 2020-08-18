@@ -6,6 +6,7 @@ import { HomePageModule } from './pages/home-page/home-page.module';
 import { ShowDetailsPageModule } from './pages/show-details-page/show-details-page.module';
 import { PageNotFoundModule } from './pages/page-not-found/page-not-found.module';
 import { SearchResultsPageModule } from './pages/search-results-page/search-results-page.module';
+import { NavigationModule } from '@mylib/navigation';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,8 @@ import { SearchResultsPageModule } from './pages/search-results-page/search-resu
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    NavigationModule,
 
     // Pages
     HomePageModule,
