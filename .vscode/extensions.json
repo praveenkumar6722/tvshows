@@ -1,0 +1,16 @@
+{
+  "unwantedRecommendations": [
+    "esbenp.prettier-vscode",
+    "hookyqr.beautify",
+    "mrmlnc.vscode-stylefmt"
+  ],
+  "recommendations": [
+    "eg2.tslint",
+    "shinnn.stylelint",
+    "eamodio.gitlens",
+    "angular.ng-template",
+    "johnpapa.angular2",
+    "EditorConfig.EditorConfig",
+    "wk-j.save-and-run"
+  ]
+}
