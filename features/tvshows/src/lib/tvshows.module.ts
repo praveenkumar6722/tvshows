@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { TvshowsComponent } from './tvshows.component';
+import { ShowCardComponent } from './show-card/show-card.component';
+import { ShowDetailsComponent } from './show-details/show-details.component';
 
 
 
 @NgModule({
-  declarations: [TvshowsComponent],
+  declarations: [ShowCardComponent, ShowDetailsComponent],
   imports: [
   ],
-  exports: [TvshowsComponent]
+  exports: []
 })
 export class TvshowsModule { }

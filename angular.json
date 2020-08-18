@@ -124,6 +124,11 @@
       "root": "core",
       "sourceRoot": "core/src",
       "prefix": "core",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -154,6 +159,11 @@
       "root": "features/tvshows",
       "sourceRoot": "features/tvshows/src",
       "prefix": "f-tvshows",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -177,9 +187,7 @@
               "features/tvshows/tsconfig.lib.json",
               "features/tvshows/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -189,6 +197,11 @@
       "root": "features/navigation",
       "sourceRoot": "features/navigation/src",
       "prefix": "f-navigation",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -212,9 +225,7 @@
               "features/navigation/tsconfig.lib.json",
               "features/navigation/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
