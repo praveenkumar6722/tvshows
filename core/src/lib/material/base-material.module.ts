@@ -7,6 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+
 
 const modules: any[] = [
   MatButtonModule,
@@ -17,7 +19,8 @@ const modules: any[] = [
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatCardModule
 ];
 
 

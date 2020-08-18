@@ -1,10 +1,20 @@
-import { NgModule } from '@angular/core';
-
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
-  imports: [
+  imports: [HttpClientModule
   ],
   exports: []
 })
-export class CoreModule { }
+export class CoreModule {
+
+  public static forRoot(environment: any): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        { provide: 'environment', useValue: environment },
+      ]
+    };
+  }
+}

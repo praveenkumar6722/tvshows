@@ -8,6 +8,8 @@ import { PageNotFoundModule } from './pages/page-not-found/page-not-found.module
 import { SearchResultsPageModule } from './pages/search-results-page/search-results-page.module';
 import { NavigationModule } from '@mylib/navigation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule } from '@mylib/core';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShowDetailsPageModule,
     PageNotFoundModule,
 
+
+
+    CoreModule.forRoot(environment),
 
   ],
   providers: [],
