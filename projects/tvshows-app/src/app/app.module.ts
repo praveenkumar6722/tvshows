@@ -7,6 +7,7 @@ import { ShowDetailsPageModule } from './pages/show-details-page/show-details-pa
 import { PageNotFoundModule } from './pages/page-not-found/page-not-found.module';
 import { SearchResultsPageModule } from './pages/search-results-page/search-results-page.module';
 import { NavigationModule } from '@mylib/navigation';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,15 @@ import { NavigationModule } from '@mylib/navigation';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
     NavigationModule,
 
     // Pages
     HomePageModule,
     SearchResultsPageModule,
     ShowDetailsPageModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+
 
 
   ],
