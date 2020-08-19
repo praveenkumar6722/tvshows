@@ -4,12 +4,16 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ShowDetailsPageComponent } from './pages/show-details-page/show-details-page.component';
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AllTvShowsResolver, RouteModule } from '@mylib/core';
 
 const routes: Routes = [
 
   {
     path: 'home',
-    component: HomePageComponent
+    component: HomePageComponent,
+    resolve: {
+      shows: AllTvShowsResolver,
+    }
   },
   {
     path: 'detail',
@@ -26,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), RouteModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

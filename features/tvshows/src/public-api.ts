@@ -3,5 +3,4 @@
  */
 
 export * from './lib/tvshows.service';
-export * from './lib/tvshows.component';
 export * from './lib/tvshows.module';

@@ -8,3 +8,4 @@ export * from './lib/material/base-material.module';
 export * from './lib/model/show';
 
 export * from './lib/http/public_api';
+export * from './lib/route/public_api';

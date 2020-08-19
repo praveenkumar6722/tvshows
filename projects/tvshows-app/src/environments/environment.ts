@@ -5,10 +5,12 @@
 import { Resource } from '@mylib/core';
 
 
+const endPoint = 'http://api.tvmaze.com';
+
 export const environment = {
   production: false,
   urls: {
-    [Resource.TvShows]: 'http://api.tvmaze.com/shows?page=0',
+    [Resource.TvShows]: `${endPoint}/shows?page=0`,
     [Resource.Show]: 'http://api.tvmaze.com/shows/:id',
     [Resource.Search]: 'http://api.tvmaze.com/search/shows',
   }

@@ -1,0 +1,29 @@
+.show-card {
+  min-width: 200px;
+  min-height: 280px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: grey;
+  overflow: hidden;
+}
+
+.image {
+  height: 250px;
+  width: 220px;
+}
+
+.content {
+  margin-top: 10px;
+  width: 220px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}

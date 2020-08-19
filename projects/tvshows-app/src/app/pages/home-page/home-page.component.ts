@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpApiService, Resource } from '@mylib/core';
+import { HttpApiService, Resource, Show } from '@mylib/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -11,23 +12,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private httpApiService: HttpApiService) {
+  public shows: Show[];
+
+  constructor(private route: ActivatedRoute) {
 
   }
   ngOnInit() {
-
-    console.log('init');
-
-    this.httpApiService.get<any[]>(Resource.TvShows).subscribe((data) => {
-      console.log(data);
-    });
-
-    //  private http:HttpClient
-    // this.http.get<any[]>('http://api.tvmaze.com/shows?page=0').subscribe((data) => {
-    //   console.log(data);
-    // });
-
-
+    const { shows } = this.route.snapshot.data;
+    this.shows = shows;
   }
 
 }

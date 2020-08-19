@@ -1,1 +1,11 @@
-<p>show-card works!</p>
+<ng-container *ngIf="show">
+  <mat-card class="show-card"
+            (click)="clicked()">
+    <img class="image"
+         [src]="show.image?.original"
+         alt="Photo">
+    <mat-card-content class="content">
+      {{show.name}} - {{show.rating.average}} -
+    </mat-card-content>
+  </mat-card>
+</ng-container>

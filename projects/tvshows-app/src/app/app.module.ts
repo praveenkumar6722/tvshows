@@ -10,7 +10,7 @@ import { NavigationModule } from '@mylib/navigation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from '@mylib/core';
 import { environment } from '../environments/environment';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +21,13 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     NavigationModule,
 
+    MatProgressSpinnerModule,
+
     // Pages
     HomePageModule,
     SearchResultsPageModule,
     ShowDetailsPageModule,
     PageNotFoundModule,
-
 
 
     CoreModule.forRoot(environment),
