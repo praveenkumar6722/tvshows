@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Show } from 'core/src/lib/model/show';
+import { Show } from '@mylib/core';
+
 
 @Component({
   selector: 'f-tvshows-show-card',
