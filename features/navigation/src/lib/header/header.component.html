@@ -1,6 +1,6 @@
-<mat-toolbar color="accent">
-  <div fxShow="true"
-       fxHide.gt-sm="true">
+<mat-toolbar style="background-color:#0f171e">
+  <div fxShow
+       fxHide.gt-sm>
     <button mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
@@ -8,19 +8,12 @@
 
   <a mat-button
      routerLink="/home">
-
-    <span fxHide.gt-sm="true"
+    <span fxHide.gt-sm
           class="material-icons">tv
     </span>
-    <span fxShow="true"
-          fxHide.lt-md="true">TV Shows</span>
+    <span fxShow
+          fxHide.lt-md>TV Shows</span>
   </a>
-
-  <!-- <div fxShow="true"
-         fxHide.lt-md="true">
-      <a mat-button
-         routerLink="/">Kids</a>
-    </div> -->
   <div fxFlex
        fxLayout
        fxLayoutAlign="end">
@@ -36,15 +29,15 @@
                 (click)="search()">search</mat-icon>
     </mat-form-field>
   </div>
-  <div fxShow="true"
-       fxHide.lt-md="true">
-    <mat-icon fxHide.xs
-              class="icon-account">account_circle</mat-icon>
+  <div fxHide.lt-sm>
+    <span class="material-icons icon-account">
+      account_circle
+    </span>
   </div>
 
 </mat-toolbar>
-<!--
 
+<!--
       <button mat-icon-button
             (click)="sidenav.toggle()">
 

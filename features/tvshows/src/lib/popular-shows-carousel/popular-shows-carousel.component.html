@@ -3,7 +3,7 @@
               interval="5000"
               color="accent"
               maxWidth="auto"
-              proportion="30"
+              proportion="25"
               slides="5"
               [loop]="true"
               [hideArrows]="false"
@@ -11,13 +11,26 @@
               [useKeyboard]="true"
               [useMouseWheel]="false"
               orientation="ltr">
+
   <mat-carousel-slide #matCarouselSlide
                       *ngFor="let show of popularShows; let i = index"
                       [image]="show.image.original"
                       overlayColor="#00000040"
                       [hideOverlay]="false">
-    <h1 style="color:white;text-align: center;">{{show.name}}</h1>
-    <p style="text-align: center;"> <button mat-raised-button
-              color="accent">Click</button></p>
+
+    <div class="show-name">
+      <button mat-button>
+        <h1>{{show.name}}</h1>
+      </button>
+    </div>
+
+    <p fxShow.gt-xs
+       fxHide
+       class="rating"><span class="material-icons">star_rate</span>{{show.rating.average}}</p>
+    <p fxShow.gt-sm
+       fxHide
+       style="text-align: center;"> <button mat-raised-button
+              color="accent">Watch</button></p>
   </mat-carousel-slide>
+
 </mat-carousel>

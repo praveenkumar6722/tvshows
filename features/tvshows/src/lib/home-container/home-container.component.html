@@ -1,3 +1,6 @@
-<f-tvshows-popular-shows-carousel [popularShows]="popularShows"></f-tvshows-popular-shows-carousel>
+<div class="home-container">
+  <f-tvshows-popular-shows-carousel [popularShows]="popularShows"></f-tvshows-popular-shows-carousel>
 
-<p *ngFor="let item of generes">{{item}}</p>
+  <f-tvshows-genere-collection [shows]="shows"
+                               [genres]="generes"></f-tvshows-genere-collection>
+</div>

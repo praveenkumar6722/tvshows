@@ -8,10 +8,13 @@ import { HomeContainerComponent } from './home-container/home-container.componen
 import { GenereCollectionComponent } from './genere-collection/genere-collection.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BaseMaterialModule } from '@mylib/core';
-
+import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [ShowCardComponent, ShowDetailsComponent, PopularShowsCarouselComponent, HomeContainerComponent, GenereCollectionComponent],
-  imports: [CommonModule, BaseMaterialModule, MatCarouselModule.forRoot(), MatGridListModule
+  imports: [CommonModule, BaseMaterialModule, MatCarouselModule.forRoot(),
+    MatGridListModule, MatChipsModule, MatExpansionModule, FlexLayoutModule
   ],
   exports: [HomeContainerComponent]
 })

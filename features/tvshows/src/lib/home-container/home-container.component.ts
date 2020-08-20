@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpApiService, Resource, Show } from '@mylib/core';
+import { Show } from '@mylib/core';
 
 @Component({
   selector: 'f-tvshows-home-container',
@@ -18,7 +18,8 @@ export class HomeContainerComponent implements OnInit {
 
 
   get popularShows(): Show[] {
-    const shows = this.shows;
+    const shows = Object.assign([], this.shows);
+
     const sorted = shows.sort((a, b) => (b.rating.average) - (a.rating.average));
     return sorted.slice(0, 5);
   }
