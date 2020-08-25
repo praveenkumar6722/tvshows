@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel } from '@angular/router';
 
 @Component({
@@ -6,14 +6,17 @@ import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel }
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title = 'tvshows-app';
 
   // Sets initial value to true to show loading spinner on first load
   loading = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router) { }
+
+
+  ngOnInit(): void {
     this.router.events.subscribe((e: RouterEvent) => {
       this.navigationInterceptor(e);
     });
@@ -21,6 +24,7 @@ export class AppComponent {
 
   // Shows and hides the loading spinner during RouterEvent changes
   navigationInterceptor(event: RouterEvent): void {
+
     if (event instanceof NavigationStart) {
       this.loading = true;
     }
@@ -33,8 +37,13 @@ export class AppComponent {
     if (event instanceof NavigationCancel) {
       this.loading = false;
     }
-    if (event instanceof NavigationEnd) {
-      this.loading = false;
-    }
+
   }
+
+
+  onActivate() {
+    window.scroll(0, 0);
+    console.log('onActivate');
+  }
+
 }

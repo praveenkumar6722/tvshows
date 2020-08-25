@@ -5,6 +5,7 @@ import { ShowDetailsPageComponent } from './pages/show-details-page/show-details
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AllTvShowsResolver, RouteModule } from '@mylib/core';
+import { GenrePageComponent } from './pages/genre-page/genre-page.component';
 
 const routes: Routes = [
 
@@ -16,12 +17,19 @@ const routes: Routes = [
     }
   },
   {
-    path: 'detail',
-    component: ShowDetailsPageComponent
+    path: 'detail/:id',
+    component: ShowDetailsPageComponent,
   },
   {
     path: 'search',
     component: SearchResultsPageComponent
+  },
+  {
+    path: 'genre/:genre',
+    component: GenrePageComponent,
+    resolve: {
+      shows: AllTvShowsResolver,
+    }
   },
   { path: 'page-not-found', component: PageNotFoundComponent },
   { path: 'error', redirectTo: 'home' },

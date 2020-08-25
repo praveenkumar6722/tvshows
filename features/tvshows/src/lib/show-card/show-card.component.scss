@@ -5,25 +5,25 @@
   cursor: pointer;
   background-color: #0f171e;
   overflow: hidden;
-}
 
-.image {
-  height: 250px;
-  width: 220px;
-}
+  &__image {
+    height: 250px;
+    width: 220px;
+  }
 
-.content {
-  margin-top: 10px;
-  width: 220px;
-  color: #eeeeee;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+  &__image:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+  }
 
-.image:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1);
+  &__content {
+    margin-top: 10px;
+    width: 220px;
+    color: #eeeeee;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

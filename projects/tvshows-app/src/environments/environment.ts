@@ -4,15 +4,14 @@
 
 import { Resource } from '@mylib/core';
 
-
 const endPoint = 'http://api.tvmaze.com';
 
 export const environment = {
   production: false,
   urls: {
     [Resource.TvShows]: `${endPoint}/shows?page=0`,
-    [Resource.Show]: 'http://api.tvmaze.com/shows/:id',
-    [Resource.Search]: 'http://api.tvmaze.com/search/shows',
+    [Resource.Show]: `${endPoint}/shows`,
+    [Resource.Search]: `${endPoint}/search/shows`,
   }
 };
 
