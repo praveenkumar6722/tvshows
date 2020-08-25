@@ -15,8 +15,8 @@ export class ShowDetailsPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private service: RouteService) { }
 
   ngOnInit() {
-
-    const showId = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(this.route.snapshot);
+    const showId = +this.route.snapshot.paramMap.get('id');
     this.service.getShowDetails(showId).subscribe((data) => {
       this.showDetails = data;
     });

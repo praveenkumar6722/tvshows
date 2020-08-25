@@ -8,7 +8,4 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchResultsPageComponent {
 
-  constructor() { }
-
-
 }

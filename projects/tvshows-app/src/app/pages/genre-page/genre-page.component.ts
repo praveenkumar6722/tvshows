@@ -15,6 +15,8 @@ export class GenrePageComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    console.log(this.route.snapshot);
     const { shows } = this.route.snapshot.data;
     this.genre = this.route.snapshot.paramMap.get('genre');
     this.genreShows = shows.filter(data => data.genres.includes(this.genre));

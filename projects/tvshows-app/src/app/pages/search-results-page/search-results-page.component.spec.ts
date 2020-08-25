@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchResultsPageComponent } from './search-results-page.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('SearchResultsPageComponent', () => {
   let component: SearchResultsPageComponent;
@@ -8,9 +9,10 @@ describe('SearchResultsPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchResultsPageComponent ]
+      declarations: [SearchResultsPageComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
