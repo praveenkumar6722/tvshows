@@ -1,16 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GenreComponent } from './genre.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
 
 describe('GenreComponent', () => {
   let component: GenreComponent;
   let fixture: ComponentFixture<GenreComponent>;
+  const routerMock = {
+    navigate: jasmine.createSpy('navigate'),
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenreComponent ]
+      declarations: [GenreComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        { provide: Router, useValue: routerMock },
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +31,13 @@ describe('GenreComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should navigate to "detail" when cardClicked is called', () => {
+    const data = '1';
+    const path = 'detail';
+    component.cardClicked(data);
+    expect(routerMock.navigate).toHaveBeenCalledWith([path, data]);
+  });
+
+
 });

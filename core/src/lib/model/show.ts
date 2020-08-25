@@ -13,7 +13,7 @@ export interface Show {
   rating: any;
   weight: number;
   network: any;
-  webchannel: any;
+  webChannel: any;
   externals: any;
   image: any;
   summary: string;

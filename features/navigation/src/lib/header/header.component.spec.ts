@@ -11,10 +11,7 @@ describe('HeaderComponent', () => {
 
   const router = {
     navigate: jasmine.createSpy('navigate'),
-    route: 'home'
   };
-
-
 
   beforeEach(async(() => {
 
