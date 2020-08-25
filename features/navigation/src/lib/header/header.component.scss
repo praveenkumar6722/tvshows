@@ -1,13 +1,6 @@
 .header {
   background-color: #0f171e;
-  a,
-  p,
-  input,
-  span,
-  button,
-  mat-icon {
-    color: #eeeeee;
-  }
+  color: #eeeeee;
 
   &__icon-account {
     cursor: pointer;

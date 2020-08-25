@@ -8,11 +8,12 @@
 
   <a mat-button
      routerLink="/home">
-    <span fxHide.gt-sm
+    <span fxShow
+          fxHide.gt-sm
           class="material-icons">tv
     </span>
-    <span fxShow
-          fxHide.lt-md>TV Shows</span>
+    <span fxShow.gt-sm
+          fxHide>TV Shows</span>
   </a>
   <div fxFlex
        fxLayout
@@ -22,13 +23,26 @@
              matInput
              placeholder="search"
              [(ngModel)]="searchString"
-             (keyup.enter)="search()"
-             #value>
-      <mat-icon matSuffix
-                class="header__icon-search"
-                (click)="search()">search</mat-icon>
+             (keyup.enter)="search()">
+      <button mat-button
+              *ngIf="searchString"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="searchString=''">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="search()">
+        <mat-icon>search</mat-icon>
+      </button>
+
     </mat-form-field>
   </div>
+
   <div fxHide.lt-sm>
     <span class="material-icons header__icon-account">
       account_circle
