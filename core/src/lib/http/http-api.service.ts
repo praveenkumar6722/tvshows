@@ -29,34 +29,17 @@ export class HttpApiService {
     return this.http.post<T>(url, data, { headers });
   }
 
-  public put<T>(resource: string, data?: any, headers?: any): Observable<T> {
-    const url = this.endpoint(resource);
-
-    return this.http.put<T>(url, data, { headers });
-  }
 
   public get<T>(
     resource: string,
-    pathParams?,
-    params?,
+    path?: string,
     headers?: { [header: string]: string },
   ): Observable<T> {
 
-    console.log('get');
-    console.log(resource);
-
     let url = this.endpoint(resource);
+    if (path) { url = url + path; }
 
-    if (pathParams) {
-
-      Object.keys(pathParams).forEach((k) => {
-        console.log(k + ' - ' + pathParams[k]);
-        url = url.replace(`:${k}`, pathParams[k]);
-      });
-
-    }
-
-    return this.http.get<T>(url, { params, headers });
+    return this.http.get<T>(url, { headers });
   }
 
   public endpoint(resource) {

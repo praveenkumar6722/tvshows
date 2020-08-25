@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AllTvShowsResolver } from './resolve/shows.resolver';
 
 
 
@@ -9,6 +8,6 @@ import { AllTvShowsResolver } from './resolve/shows.resolver';
   imports: [
     CommonModule
   ],
-  providers: [AllTvShowsResolver]
+  providers: []
 })
 export class RouteModule { }

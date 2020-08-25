@@ -18,14 +18,15 @@ export interface Show {
   image: any;
   summary: string;
   updated: number;
-  // tslint:disable-next-line:variable-name
   _links: any;
+  _embedded: any;
 }
 
 export class SearchResults {
   score: string;
   show: Show[];
 }
+
 
 
 

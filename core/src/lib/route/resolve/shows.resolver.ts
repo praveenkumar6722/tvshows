@@ -4,11 +4,13 @@ import { RouteService } from '../route.service';
 import { Observable } from 'rxjs';
 import { Show } from '../../model/show';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AllTvShowsResolver implements Resolve<Observable<Show[]>> {
   constructor(private routeService: RouteService) { }
 
   public resolve(): Observable<Show[]> {
-    return this.routeService.allTvShows;
+    return this.routeService.getallTvShows();
   }
 }
