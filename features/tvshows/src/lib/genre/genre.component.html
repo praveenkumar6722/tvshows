@@ -1,0 +1,12 @@
+<div class="genre">
+  <h2 class="genre__header">
+    {{genre}}
+  </h2>
+  <div class="genre__content">
+    <ng-container *ngFor="let show of shows">
+      <f-tvshows-show-card [show]="show"
+                           (cardClicked)="cardClicked($event)">
+      </f-tvshows-show-card>
+    </ng-container>
+  </div>
+</div>

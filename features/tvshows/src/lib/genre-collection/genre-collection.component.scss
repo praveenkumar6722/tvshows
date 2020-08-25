@@ -1,0 +1,33 @@
+.genre-collection {
+  margin: 0 10px 0 10px;
+
+  h3 {
+    color: #eeeeee;
+  }
+
+  &__genreButton {
+    font-size: medium;
+    margin: 5px;
+  }
+
+  &__genreName {
+    color: #eeeeee;
+    font-size: large;
+  }
+
+  &__viewall {
+    font-size: 12px;
+    cursor: pointer;
+    color: grey;
+  }
+
+  &__cardsList {
+    display: flex;
+    flex-direction: row;
+    //width: 40%;
+    overflow-x: scroll;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: flex-start;
+  }
+}

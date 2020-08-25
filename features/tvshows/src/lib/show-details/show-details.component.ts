@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Show } from '@mylib/core';
 
 @Component({
   selector: 'f-tvshows-show-details',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowDetailsComponent implements OnInit {
 
+  @Input()
+  public showDetails: Show;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

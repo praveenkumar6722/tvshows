@@ -1,12 +1,18 @@
-.show-name {
-  color: #eeeeee;
-  text-align: center;
-  h1 {
-    margin-bottom: 0px;
+.popuplar-shows {
+  &__name {
+    color: #eeeeee;
+    text-align: center;
+    h1 {
+      margin-bottom: 0px;
+    }
   }
-}
 
-.rating {
-  text-align: center;
-  color: #ffd740;
+  &__rating {
+    text-align: center;
+    color: #ffd740;
+  }
+
+  &__button {
+    text-align: center;
+  }
 }

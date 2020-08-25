@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Show } from '@mylib/core';
 
 @Component({
@@ -11,9 +11,18 @@ export class PopularShowsCarouselComponent implements OnInit {
   @Input()
   public popularShows: Show[];
 
+  @Output()
+  public showClicked: EventEmitter<number> = new EventEmitter<number>();
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
+
+  showSelected(data): void {
+
+    this.showClicked.emit(data);
+  }
 }

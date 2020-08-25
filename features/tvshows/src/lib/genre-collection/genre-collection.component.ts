@@ -3,11 +3,11 @@ import { Show } from '@mylib/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'f-tvshows-genere-collection',
-  templateUrl: './genere-collection.component.html',
-  styleUrls: ['./genere-collection.component.scss']
+  selector: 'f-tvshows-genre-collection',
+  templateUrl: './genre-collection.component.html',
+  styleUrls: ['./genre-collection.component.scss']
 })
-export class GenereCollectionComponent implements OnInit {
+export class GenreCollectionComponent implements OnInit {
 
 
   @Input()
@@ -19,25 +19,19 @@ export class GenereCollectionComponent implements OnInit {
   @Output()
   public showCardClicked: EventEmitter<Show> = new EventEmitter<Show>();
 
-
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-
   }
 
-
-  public viewAll(genre) {
+  public viewAll(genre: string) {
     console.log(genre);
-    // this.router.navigate(['/viewall'], { queryParams: { cat: genre } });
+    this.router.navigate(['genre', genre]);
   }
+
 
   public cardClicked(data) {
     this.showCardClicked.emit(data);
   }
-
-
 
 }

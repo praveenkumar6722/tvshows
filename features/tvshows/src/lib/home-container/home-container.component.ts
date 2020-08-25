@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Show } from '@mylib/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'f-tvshows-home-container',
@@ -14,7 +15,7 @@ export class HomeContainerComponent implements OnInit {
 
   // public popularShows: Show[];
 
-  public uniqueGenere: any;
+  public uniqueGenre: any;
 
 
   get popularShows(): Show[] {
@@ -25,7 +26,7 @@ export class HomeContainerComponent implements OnInit {
   }
 
 
-  get generes(): any {
+  get genres(): any {
 
     const array = this.shows.map(data => data.genres);
     const merged = [].concat.apply([], array);
@@ -34,16 +35,21 @@ export class HomeContainerComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log('0000');
+
     console.log(this.shows);
-    console.log('1111');
     console.log(this.popularShows);
-    console.log('222');
-    console.log(this.generes);
-    console.log('333');
+    console.log(this.genres);
+
   }
+
+  showCardClicked(data) {
+
+    this.router.navigate(['detail', data]);
+
+  }
+
 
 }

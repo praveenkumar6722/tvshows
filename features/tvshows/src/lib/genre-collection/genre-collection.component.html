@@ -1,20 +1,23 @@
-<div class="genere">
-  <h3>Generes</h3>
-  <button mat-raised-button
-          *ngFor="let genre of genres"
-          style="margin:5px">{{genre}}</button>
-  <h3>TV Shows By Genere</h3>
+<div class="genre-collection">
+  <div fxShow.gt-xs
+       fxHide>
+
+    <h3>Genres</h3>
+    <button mat-raised-button
+            (click)="viewAll(genre)"
+            class="genre-collection__genreButton"
+            *ngFor="let genre of genres">{{genre}}</button>
+  </div>
+  <h3>TV Shows By Genre</h3>
   <div *ngFor="let genre of genres">
     <button mat-button
-            class="button-genres"> {{genre}}</button>
+            (click)="viewAll(genre)"
+            class="genre-collection__genreName"> {{genre}}</button>
     <a mat-button
-       class="button-viewall"
+       class="genre-collection__viewall"
        (click)="viewAll(genre)">View All</a>
-    <section class="cards"
-             ngClass.xs="Hello">
-      <ng-container class="card--content"
-                    *ngFor="let show of shows; ">
-
+    <section class="genre-collection__cardsList">
+      <ng-container *ngFor="let show of shows; ">
         <ng-container *ngIf="show.genres.includes(genre) ">
           <f-tvshows-show-card [show]="show"
                                (cardClicked)="cardClicked($event)">
@@ -30,7 +33,7 @@
   <mat-expansion-panel [expanded]='true'>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Generes
+        Genres
       </mat-panel-title>
 
     </mat-expansion-panel-header>

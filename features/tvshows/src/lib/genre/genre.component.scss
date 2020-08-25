@@ -1,0 +1,16 @@
+.genre {
+  padding: 10px;
+
+  &__header {
+    margin: 0px;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

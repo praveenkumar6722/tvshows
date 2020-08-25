@@ -1,6 +1,9 @@
 <div class="home-container">
-  <f-tvshows-popular-shows-carousel [popularShows]="popularShows"></f-tvshows-popular-shows-carousel>
+  <f-tvshows-popular-shows-carousel [popularShows]="popularShows"
+                                    (showClicked)="showCardClicked($event)"></f-tvshows-popular-shows-carousel>
 
-  <f-tvshows-genere-collection [shows]="shows"
-                               [genres]="generes"></f-tvshows-genere-collection>
+  <f-tvshows-genre-collection [shows]="shows"
+                              (showCardClicked)="showCardClicked($event)"
+                              [genres]="genres">
+  </f-tvshows-genre-collection>
 </div>

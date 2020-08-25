@@ -1,1 +1,39 @@
-<p>show-details works!</p>
+<mat-card class="show-details"
+          ngClass.gt-xs="show-details--gt-xs"
+          *ngIf="showDetails">
+  <img class="show-details__image"
+       [src]="showDetails.image?.original"
+       alt="Photo">
+  <mat-card-content class="show-details__content">
+    <h1> {{showDetails.name}}</h1>
+    <div class="show-details__summary"
+         [innerHTML]="showDetails.summary"></div>
+
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip color="accent"
+                *ngFor="let item of showDetails.genres"
+                selected>{{item}}</mat-chip>
+    </mat-chip-list>
+
+    <ul>
+
+      <li>
+        <mat-label>Premiered</mat-label> : {{showDetails.premiered}}
+      </li>
+      <li>
+        <mat-label>Rating</mat-label> : {{showDetails.rating.average}} <span class="material-icons">star_rate</span>
+      </li>
+      <li>
+        <mat-label>Runtime</mat-label> : {{showDetails.runtime}}
+      </li>
+      <li>
+        <mat-label>Schedule</mat-label> : {{showDetails.schedule.time}} | {{showDetails.schedule.days}}
+      </li>
+      <li>
+        <mat-label>Language</mat-label> : {{showDetails.language}}
+      </li>
+
+    </ul>
+
+  </mat-card-content>
+</mat-card>

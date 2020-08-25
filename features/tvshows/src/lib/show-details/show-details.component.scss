@@ -1,0 +1,25 @@
+.show-details {
+  &__image {
+    width: 300px;
+    height: 400px;
+  }
+
+  &__content {
+    margin: 10px;
+  }
+
+  &__summary {
+    font-size: 20px;
+    ul {
+      font-size: 18px;
+    }
+  }
+}
+
+.show-details--gt-xs {
+  // min-width: 300px;
+  // min-height: 420px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+}

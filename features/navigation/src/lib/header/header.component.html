@@ -1,4 +1,4 @@
-<mat-toolbar style="background-color:#0f171e">
+<mat-toolbar class="header">
   <div fxShow
        fxHide.gt-sm>
     <button mat-icon-button>
@@ -25,12 +25,12 @@
              (keyup.enter)="search()"
              #value>
       <mat-icon matSuffix
-                class="icon-search"
+                class="header__icon-search"
                 (click)="search()">search</mat-icon>
     </mat-form-field>
   </div>
   <div fxHide.lt-sm>
-    <span class="material-icons icon-account">
+    <span class="material-icons header__icon-account">
       account_circle
     </span>
   </div>

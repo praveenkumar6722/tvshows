@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'f-navigation-header',
@@ -9,13 +10,16 @@ export class HeaderComponent implements OnInit {
 
   public searchString = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   public search() {
-    console.log('search clicked - ' + this.searchString);
-    this.searchString = '';
+
+    if (this.searchString) {
+      this.router.navigate(['search'], { queryParams: { phrase: this.searchString } });
+      // this.searchString = '';
+    }
   }
 }

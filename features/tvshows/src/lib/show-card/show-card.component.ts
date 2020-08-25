@@ -13,7 +13,7 @@ export class ShowCardComponent implements OnInit {
   public show: Show;
 
   @Output()
-  public cardClicked: EventEmitter<Show> = new EventEmitter<Show>();
+  public cardClicked: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
@@ -22,7 +22,8 @@ export class ShowCardComponent implements OnInit {
 
   public clicked() {
     console.log('clicked ');
-    this.cardClicked.emit(this.show);
+    this.cardClicked.emit(this.show.id);
+
   }
 
 }
