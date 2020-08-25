@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Show } from '@mylib/core';
@@ -8,7 +8,7 @@ import { Show } from '@mylib/core';
   templateUrl: './genre.component.html',
   styleUrls: ['./genre.component.scss']
 })
-export class GenreComponent implements OnInit {
+export class GenreComponent {
 
 
   @Input()
@@ -19,8 +19,6 @@ export class GenreComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
 
   cardClicked(data) {
     this.router.navigate(['detail', data]);

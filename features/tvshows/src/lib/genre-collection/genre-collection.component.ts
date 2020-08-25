@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, ElementRef, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Show } from '@mylib/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './genre-collection.component.html',
   styleUrls: ['./genre-collection.component.scss']
 })
-export class GenreCollectionComponent implements OnInit {
+export class GenreCollectionComponent {
 
 
   @Input()
@@ -21,11 +21,8 @@ export class GenreCollectionComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
 
   public viewAll(genre: string) {
-    console.log(genre);
     this.router.navigate(['genre', genre]);
   }
 

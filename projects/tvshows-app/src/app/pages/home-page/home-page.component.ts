@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpApiService, Resource, Show } from '@mylib/core';
-import { HttpClient } from '@angular/common/http';
+import { Show } from '@mylib/core';
 import { ActivatedRoute } from '@angular/router';
-
 
 
 @Component({

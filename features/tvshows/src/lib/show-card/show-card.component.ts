@@ -7,7 +7,7 @@ import { Show } from '@mylib/core';
   templateUrl: './show-card.component.html',
   styleUrls: ['./show-card.component.scss']
 })
-export class ShowCardComponent implements OnInit {
+export class ShowCardComponent {
 
   @Input()
   public show: Show;
@@ -15,15 +15,8 @@ export class ShowCardComponent implements OnInit {
   @Output()
   public cardClicked: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   public clicked() {
-    console.log('clicked ');
     this.cardClicked.emit(this.show.id);
-
   }
 
 }

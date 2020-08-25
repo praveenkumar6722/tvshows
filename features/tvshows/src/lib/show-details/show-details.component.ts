@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Show } from '@mylib/core';
 
 @Component({
@@ -6,15 +6,9 @@ import { Show } from '@mylib/core';
   templateUrl: './show-details.component.html',
   styleUrls: ['./show-details.component.scss']
 })
-export class ShowDetailsComponent implements OnInit {
+export class ShowDetailsComponent {
 
   @Input()
   public showDetails: Show;
-
-  constructor() { }
-
-  ngOnInit() {
-
-  }
 
 }
