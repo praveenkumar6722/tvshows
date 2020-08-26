@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { EndpointConfigurationEnvironment } from './endpoint-configuration-environment';
 
 /**
  * @description
@@ -13,16 +12,10 @@ import { EndpointConfigurationEnvironment } from './endpoint-configuration-envir
   providedIn: 'root'
 })
 export class HttpApiService {
-  private endpoints: EndpointConfigurationEnvironment;
-
-
-  constructor(
-    private http: HttpClient,
-    @Inject('environment') environment: any,
-  ) {
-    this.endpoints = new EndpointConfigurationEnvironment(environment);
+  environment: any;
+  constructor(private http: HttpClient, @Inject('environment') environment: any) {
+    this.environment = environment;
   }
-
 
   public get<T>(
     resource: string,
@@ -30,14 +23,17 @@ export class HttpApiService {
     headers?: { [header: string]: string },
   ): Observable<T> {
 
-    let url = this.endpoint(resource);
+    let url = this.getEndpoint(this.environment, resource);
     if (path) { url = url + path; }
-
     return this.http.get<T>(url, { headers });
   }
 
-  public endpoint(resource) {
+  public getEndpoint(environment, name: string): any {
+    if (!environment.urls[name]) {
+      console.error(name + ' is not available in the current environment. Please add it to the appropiate environment.ts');
+    }
 
-    return this.endpoints.getEndpoint(resource).url;
+    return environment.urls[name];
   }
+
 }

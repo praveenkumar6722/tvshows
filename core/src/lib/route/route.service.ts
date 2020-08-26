@@ -14,7 +14,7 @@ export class RouteService {
 
   public getallTvShows(): Observable<Show[]> {
 
-    return this.httpApiService.get<Show[]>(Resource.TvShows, null).pipe(map((data) => data.slice(0, 150)));
+    return this.httpApiService.get<Show[]>(Resource.TvShows, null);
   }
 
   public getShowDetails(id: number): Observable<Show> {

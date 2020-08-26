@@ -1,5 +1,9 @@
+@import "styling/variables/defaults.scss";
+
 .footer {
-  background-color: #0f171e;
-  color: grey;
+  background-color: $background-color;
+  color: #dcdcdc;
   font-size: 13px;
+  display: flex;
+  flex-direction: column;
 }

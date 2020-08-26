@@ -7,11 +7,9 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
-import { tap, filter, startWith } from 'rxjs/operators';
-
+import { tap, filter } from 'rxjs/operators';
 import { HttpCacheService } from './http-cache.service';
 
-export const RefreshCachingInterceptor = 'refresh-caching';
 
 /**
  * @description

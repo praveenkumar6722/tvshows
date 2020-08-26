@@ -14,9 +14,9 @@
       </mat-chip-list>
       <div class="show-details__summary"
            [innerHTML]="showDetails.summary"></div>
-      <p>Language : {{showDetails.language}}</p>
-      <p>Premiered : {{showDetails.premiered}} | Runtime: {{showDetails.runtime}}</p>
-      <p>Rating : {{showDetails.rating.average}}
+      <p *ngIf="showDetails.language">Language : {{showDetails.language}}</p>
+      <p *ngIf="showDetails.premiered">Premiered : {{showDetails.premiered}} | Runtime: {{showDetails.runtime}}</p>
+      <p *ngIf="showDetails.rating.average">Rating : {{showDetails.rating.average}}
         <span class="material-icons">star_rate</span>
       </p>
     </mat-card-content>

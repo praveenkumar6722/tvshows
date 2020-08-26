@@ -22,7 +22,7 @@ export interface Show {
   _embedded: any;
 }
 
-export class SearchResults {
+export interface SearchResults {
   score: string;
   show: Show[];
 }

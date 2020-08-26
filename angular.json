@@ -108,9 +108,7 @@
               "projects/tvshows-app/tsconfig.spec.json",
               "projects/tvshows-app/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -150,19 +148,15 @@
           "options": {
             "main": "core/src/test.ts",
             "tsConfig": "core/tsconfig.spec.json",
-            "karmaConfig": "core/karma.conf.js"
+            "karmaConfig": "core/karma.conf.js",
+            "codeCoverageExclude": ["core/src/lib/http/**"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "core/tsconfig.lib.json",
-              "core/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["core/tsconfig.lib.json", "core/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -200,9 +194,7 @@
               "features/tvshows/tsconfig.lib.json",
               "features/tvshows/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -240,9 +232,7 @@
               "features/navigation/tsconfig.lib.json",
               "features/navigation/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

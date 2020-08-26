@@ -1,7 +1,7 @@
 @import "styling/variables/defaults.scss";
 
 .header {
-  background-color: #0f171e;
+  background-color: $background-color;
   color: #eeeeee;
 
   &__icon-account {
