@@ -1,17 +1,20 @@
-.genre-collection {
-  margin: 0 10px 0 10px;
+@import "styling/variables/defaults.scss";
 
-  h3 {
-    color: #eeeeee;
+.genre-collection {
+  margin: 0 $margin-medium-x 0 $margin-medium-x;
+  color: #eeeeee;
+
+  &__genresList {
+    text-align: center;
   }
 
   &__genreButton {
     font-size: medium;
-    margin: 5px;
+    margin: $margin-small-x;
+    background-color: #7b8289; // #dfdfde
   }
 
   &__genreName {
-    color: #eeeeee;
     font-size: large;
   }
 
@@ -24,10 +27,9 @@
   &__cardsList {
     display: flex;
     flex-direction: row;
-    //width: 40%;
     overflow-x: scroll;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: $margin-medium-x;
+    margin-right: $margin-medium-x;
     justify-content: flex-start;
   }
 }

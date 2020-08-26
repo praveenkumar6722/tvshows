@@ -1,16 +1,18 @@
 <div class="genre-collection">
   <div fxShow.gt-xs
-       fxHide>
+       fxHide
+       class="genre-collection__genresList">
 
-    <h3>Genres</h3>
+    <p>TV genres</p>
     <button mat-raised-button
             (click)="viewAll(genre)"
             class="genre-collection__genreButton"
             *ngFor="let genre of genres">{{genre}}</button>
   </div>
-  <h3>TV Shows By Genre</h3>
+  <h3>TV Shows by Genre</h3>
   <div *ngFor="let genre of genres">
     <button mat-button
+            color="accent"
             (click)="viewAll(genre)"
             class="genre-collection__genreName"> {{genre}}</button>
     <a mat-button
@@ -27,18 +29,3 @@
     </section>
   </div>
 </div>
-
-
-<!-- <mat-accordion>
-  <mat-expansion-panel [expanded]='true'>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Genres
-      </mat-panel-title>
-
-    </mat-expansion-panel-header>
-    <button mat-raised-button
-            *ngFor="let  g of genre"
-            style="margin:5px">{{g}}</button>
-  </mat-expansion-panel>
-</mat-accordion> -->

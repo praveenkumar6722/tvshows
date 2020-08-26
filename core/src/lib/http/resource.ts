@@ -5,6 +5,6 @@
 
 export const Resource = {
   TvShows: 'tvshows',
-  Show: 'show',
+  ShowDetails: 'showDetails',
   Search: 'search'
 };

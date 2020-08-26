@@ -10,7 +10,7 @@ export const environment = {
   production: false,
   urls: {
     [Resource.TvShows]: `${endPoint}/shows?page=0`,
-    [Resource.Show]: `${endPoint}/shows/`,
+    [Resource.ShowDetails]: `${endPoint}/shows/`,
     [Resource.Search]: `${endPoint}/search/shows/`,
   }
 };

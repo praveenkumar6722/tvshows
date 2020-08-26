@@ -8,8 +8,6 @@ import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel }
 })
 export class AppComponent implements OnInit {
 
-  title = 'tvshows-app';
-
   // Sets initial value to true to show loading spinner on first load
   loading = true;
 
@@ -31,15 +29,10 @@ export class AppComponent implements OnInit {
     if (event instanceof NavigationEnd) {
       this.loading = false;
     }
-
-    // Set loading state to false in both of the below events to hide the spinner in case
-    // a request fails
     if (event instanceof NavigationCancel) {
       this.loading = false;
     }
-
   }
-
 
   onActivate() {
     window.scroll(0, 0);
