@@ -8,9 +8,12 @@
 
 
 <ng-template #content>
-  <f-navigation-header></f-navigation-header>
-  <div class="router-outlet">
-    <router-outlet (activate)="onActivate($event)"></router-outlet>
-  </div>
+  <f-navigation-header>
+
+    <div class="router-outlet">
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+  </f-navigation-header>
+
   <f-navigation-footer></f-navigation-footer>
 </ng-template>

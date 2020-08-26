@@ -6,10 +6,11 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BaseMaterialModule } from '@mylib/core';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
-  imports: [BaseMaterialModule, CommonModule, FormsModule, CommonModule, FormsModule, FlexLayoutModule, RouterModule
+  imports: [BaseMaterialModule, MatSelectModule, CommonModule, FormsModule, CommonModule, FormsModule, FlexLayoutModule, RouterModule
   ],
   exports: [HeaderComponent, FooterComponent]
 })

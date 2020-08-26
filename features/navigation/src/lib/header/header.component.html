@@ -1,7 +1,8 @@
 <mat-toolbar class="header">
   <div fxShow
        fxHide.gt-sm>
-    <button mat-icon-button>
+    <button mat-icon-button
+            (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
@@ -51,26 +52,19 @@
 
 </mat-toolbar>
 
-<!--
-      <button mat-icon-button
-            (click)="sidenav.toggle()">
-
-  <mat-sidenav-container fxFlexFill
-                       class="example-container">
-
-  <mat-sidenav color="primary"
-               #sidenav
-               fxLayout="column"
-               mode="over"
-               opened="false"
-               fxHide.gt-sm="true">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav
+               class="header__sidenav"
+               mode="over">
     <div fxLayout="column">
       <a mat-button
-         routerLink="/home">TV Shows</a>
-      <a mat-button
-         routerLink="/search">Account</a>
+         routerLink="/">Account</a>
       <a mat-button
          routerLink="/">Movies</a>
     </div>
   </mat-sidenav>
-</mat-sidenav-container> -->
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
