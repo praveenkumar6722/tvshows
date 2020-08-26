@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RouteService } from 'core/src/public-api';
 import { Show } from '@mylib/core';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-show-details-page',
@@ -11,15 +13,20 @@ import { Show } from '@mylib/core';
 export class ShowDetailsPageComponent implements OnInit {
 
   public showDetails: Show;
+  public error = false;
 
   constructor(private route: ActivatedRoute, private service: RouteService) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot);
     const showId = +this.route.snapshot.paramMap.get('id');
-    this.service.getShowDetails(showId).subscribe((data) => {
-      this.showDetails = data;
-    });
+    this.service.getShowDetails(showId)
+      .pipe(catchError((error) => {
+        this.error = true;
+        return throwError(error);
+      }))
+      .subscribe((data) => {
+        this.showDetails = data;
+      });
   }
 
 }

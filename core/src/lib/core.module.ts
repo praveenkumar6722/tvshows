@@ -17,7 +17,8 @@ export class CoreModule {
         { provide: 'environment', useValue: environment },
         {
           provide: HTTP_INTERCEPTORS,
-          useClass: HttpCachingInterceptor
+          useClass: HttpCachingInterceptor,
+          multi: true
         },
       ]
     };

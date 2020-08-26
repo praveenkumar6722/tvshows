@@ -23,12 +23,6 @@ export class HttpApiService {
     this.endpoints = new EndpointConfigurationEnvironment(environment);
   }
 
-  public post<T>(resource: string, data?: any, headers?: any): Observable<T> {
-    const url = this.endpoint(resource);
-
-    return this.http.post<T>(url, data, { headers });
-  }
-
 
   public get<T>(
     resource: string,
