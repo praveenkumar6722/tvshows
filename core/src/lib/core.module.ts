@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpCachingInterceptor } from './http/interceptor/http-caching.interceptor';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,10 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         { provide: 'environment', useValue: environment },
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: HttpCachingInterceptor
+        },
       ]
     };
   }
