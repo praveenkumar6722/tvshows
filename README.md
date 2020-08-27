@@ -1,27 +1,150 @@
-# TvmazeAngular
+# TV Shows 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
-## Development server
+This application is TV shows guide using Tvmaze API, where you can view all Tv shows, popular shows, show details and can search for shows. Applicaiton has been designed & built responsive and mobile friendly :computer: :iphone:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `Node` v12.13.1
 
-## Build
+- `npm` 6.13.2
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Project 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This Project workspace contains libraries and multi application setup. To start running an application, the libraries have to be build.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Setup
 
-## Further help
+```
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Build libraries
+
+- This will build all the libraries
+
+```
+ npm run build:lib
+```
+
+- Build individual libraries.
+
+```
+  ng build --libraryName--
+
+  Example :  ng build core
+
+```
+
+### Run the project
+
+```
+ $ npm start tvshows-app
+
+```
+
+### Unit tests
+
+```
+ ng test --library/project--
+
+ Example: ng test tvshows-app
+
+```
+
+##  workspace folder structure
+
+.
+├── README.md
+├── angular.json
+├── core   // library cotaints common reusable components, services used across lib & project
+│   ├── src
+│   │   ├── lib
+│   │   │   ├── core.module.ts
+│   │   │   ├── http // contains http client implementation, interceptors
+│   │   │   ├── material // basic material modules used
+│   │   │   ├── model  // interface models
+│   │   │   └── route // route service
+│   ├── 
+│   ├── // library configuration files
+│   └── 
+├── features  // feature libraries 
+│   ├── navigation
+│   │   ├── src
+│   │       ├── lib  // components
+│   │       │   ├── footer
+│   │       │   ├── header
+│   │       │   └── navigation.module.ts
+│   │       ├── 
+│   │       ├── // library configuration files
+│   │       └── 
+│   └── tvshows
+│       ├── src
+│           ├── lib  // components
+│           │   ├── genre
+│           │   ├── genre-collection
+│           │   ├── home-container
+│           │   ├── popular-shows-carousel
+│           │   ├── search-results
+│           │   ├── show-card
+│           │   ├── show-details
+│           │   └── tvshows.module.ts
+│           ├── 
+│           ├── // library configuration files
+│          
+├── projects
+│   └── tvshows-app
+│       ├── src
+│       │   ├── app
+│       │   │   ├── app-routing.module.ts
+│       │   │   ├── app.component.html
+│       │   │   ├── app.component.scss
+│       │   │   ├── app.component.spec.ts
+│       │   │   ├── app.component.ts
+│       │   │   ├── app.module.ts
+│       │   │   └── pages
+│       │   │       ├── genre-page
+│       │   │       ├── home-page
+│       │   │       ├── search-results-page
+│       │   │       └── show-details-page
+│       │   ├── assets
+│       │   ├── environments
+│       │   │   ├── environment.prod.ts
+│       │   │   └── environment.ts
+│       │   ├── favicon.ico
+│       │   ├── index.html
+│       │   ├── main.ts
+│       │   ├── polyfills.ts
+│       │   ├── styles.scss
+│       │   └── test.ts
+│       ├── tsconfig.app.json
+│       ├── tsconfig.spec.json
+│       └── tslint.json
+├── styling  // styling variables
+├── test // mock data for testing
+├── tsconfig.json
+└── tslint.json
+
+
+#### Tooling
+
+- Angular CLI
+  
+  The official Angular CLI makes it easy to create and develop applications from initial commit to production deployment. It already follows our best practices right out of the box!
+
+#### UI Components
+
+- Angular Material (Material Design components for Angular)
+
+#### CSS Methodology 
+
+- Block, Element, Modifier (commonly referred to as BEM)
+
+#### IDE used for development
+
+- Visual studio code
+
+  VS Code is a Free, Lightweight Tool for Editing and Debugging Web Apps.
