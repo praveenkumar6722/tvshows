@@ -7,7 +7,7 @@ import { Show } from '../../model/show';
 @Injectable({
   providedIn: 'root'
 })
-export class AllTvShowsResolver implements Resolve<Observable<Show[]>> {
+export class TvShowsResolver implements Resolve<Observable<Show[]>> {
   constructor(private routeService: RouteService) { }
 
   public resolve(): Observable<Show[]> {

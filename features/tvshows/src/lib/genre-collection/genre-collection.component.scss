@@ -4,17 +4,31 @@
   margin: 0 $margin-medium-x 0 $margin-medium-x;
   color: #eeeeee;
 
-  &__genresList {
+  h3 {
     text-align: center;
   }
 
-  &__genreButton {
-    font-size: medium;
-    margin: $margin-small-x;
-    background-color: #7b8289; // #dfdfde
+  &__genres-list {
+    text-align: center;
+    padding-bottom: $padding-large-x;
   }
 
-  &__genreName {
+  &__shows {
+    padding-top: $padding-medium-x;
+  }
+
+  &__genre-btn {
+    font-size: medium;
+    margin: $margin-small-x;
+    background-color: #7b8289;
+    border-radius: 18px;
+  }
+
+  &__genre-btn:hover {
+    background-color: #ffd740;
+  }
+
+  &__genre-name {
     font-size: large;
   }
 
@@ -24,7 +38,7 @@
     color: grey;
   }
 
-  &__cardsList {
+  &__cards-list {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;

@@ -4,7 +4,6 @@ import { TvshowsModule } from '@mylib/tvshows';
 import { GenrePageComponent } from './genre-page.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule, TvshowsModule

@@ -14,9 +14,8 @@ export class PopularShowsCarouselComponent {
   @Output()
   public showClicked: EventEmitter<number> = new EventEmitter<number>();
 
-
   showSelected(data): void {
-
     this.showClicked.emit(data);
   }
+
 }

@@ -32,7 +32,7 @@ describe('GenreCollectionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to "genre" when viewAll is called', () => {
+  it('should navigate to "genre" when method viewAll is called', () => {
     const data = 'action';
     const path = 'genre';
     component.viewAll(data);

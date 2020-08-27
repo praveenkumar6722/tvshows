@@ -23,7 +23,6 @@ const modules: any[] = [
   MatCardModule
 ];
 
-
 @NgModule({
   imports: [...modules],
   exports: [...modules]

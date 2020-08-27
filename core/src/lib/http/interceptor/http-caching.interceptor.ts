@@ -26,7 +26,7 @@ export class HttpCachingInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
 
-    let result$;
+    let result$: any;
 
     const cachedResponse = this.cache.get(request.urlWithParams);
 

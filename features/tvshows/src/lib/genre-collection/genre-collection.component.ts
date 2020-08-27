@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class GenreCollectionComponent {
 
-
   @Input()
   public shows: Show[];
 
@@ -21,11 +20,9 @@ export class GenreCollectionComponent {
 
   constructor(private router: Router) { }
 
-
   public viewAll(genre: string) {
     this.router.navigate(['genre', genre]);
   }
-
 
   public cardClicked(data) {
     this.showCardClicked.emit(data);

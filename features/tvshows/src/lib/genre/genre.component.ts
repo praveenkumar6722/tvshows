@@ -10,7 +10,6 @@ import { Show } from '@mylib/core';
 })
 export class GenreComponent {
 
-
   @Input()
   public shows: Show[];
 
@@ -18,7 +17,6 @@ export class GenreComponent {
   public genre: string;
 
   constructor(private router: Router) { }
-
 
   cardClicked(data) {
     this.router.navigate(['detail', data]);

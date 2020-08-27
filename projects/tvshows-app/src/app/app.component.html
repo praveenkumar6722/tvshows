@@ -1,19 +1,15 @@
 <div *ngIf="loading; else content"
      class="loading-screen-wrapper">
   <div class="loading-screen-icon">
-    <!-- <p>Loading.....</p> -->
     <mat-spinner color="accent"></mat-spinner>
   </div>
 </div>
 
-
 <ng-template #content>
   <f-navigation-header>
-
     <div class="router-outlet">
       <router-outlet (activate)="onActivate($event)"></router-outlet>
     </div>
   </f-navigation-header>
-
   <f-navigation-footer></f-navigation-footer>
 </ng-template>

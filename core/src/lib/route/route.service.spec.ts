@@ -1,12 +1,9 @@
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { RouteService } from './route.service';
 import { HttpApiService } from '../http/public_api';
 import { HttpApiServiceMock } from 'test/mock/http-api.service.mock';
-import { of } from 'rxjs';
 import { shows, show, search } from 'test/mock/models';
-import { SearchResults } from '../model/show';
-
-
 
 describe('RouteService', () => {
   const httpApiServiceMock = new HttpApiServiceMock();

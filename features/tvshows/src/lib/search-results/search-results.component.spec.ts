@@ -15,21 +15,25 @@ describe('SearchResultsComponent', () => {
     navigate: jasmine.createSpy('navigate'),
   };
 
-
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SearchResultsComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
-        { provide: Router, useValue: routerMock },
+        {
+          provide: Router,
+          useValue: routerMock
+        },
         {
           provide: RouteService, useValue: {
             getSearchResults: () =>
               of([]),
           }
         },
-        { provide: ActivatedRoute, useValue: { queryParams: of(convertToParamMap({ phrase: 'abc' })) }, },
+        {
+          provide: ActivatedRoute,
+          useValue: { queryParams: of(convertToParamMap({ phrase: 'abc' })) },
+        },
       ],
 
     })
@@ -46,7 +50,7 @@ describe('SearchResultsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to "detail" when cardClicked is called', () => {
+  it('should navigate to detail when cardClicked method is called', () => {
     const data = '1';
     const path = 'detail';
     component.cardClicked(data);

@@ -37,7 +37,7 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to search if value', () => {
+  it('should navigate to search when method search is called', () => {
     component.searchString = 'fire';
     component.search();
     const path = 'search';

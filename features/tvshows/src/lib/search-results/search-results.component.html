@@ -1,15 +1,11 @@
 <div class="search-results"
      *ngIf="results">
-
   <h2 class="search-results__header"> "{{count}}" results found for "{{phrase}}".</h2>
-
   <div class="search-results__content">
     <ng-container *ngFor="let show of results">
-
       <f-tvshows-show-card [show]="show.show"
                            (cardClicked)="cardClicked($event)">
       </f-tvshows-show-card>
     </ng-container>
-
   </div>
 </div>

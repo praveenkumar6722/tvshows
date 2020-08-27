@@ -13,8 +13,6 @@ export class HomeContainerComponent implements OnInit {
   @Input()
   public shows: Show[];
 
-  public uniqueGenre: any;
-
   public popularShows: Show[];
 
   public genres: string[];
@@ -22,34 +20,27 @@ export class HomeContainerComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.popularShows = this.getPopularShows();
+    this.genres = this.getGenres();
+  }
 
-    this.popularShows = this.filterPopularShows();
-    this.genres = this.filterGenres();
+  getPopularShows(): Show[] {
+    const shows = [...this.shows];
+    const sorted = shows.sort((a, b) => (b.rating.average) - (a.rating.average));
 
+    return sorted.slice(0, 5);
+  }
+
+  getGenres(): any {
+    const array = this.shows.map(data => data.genres);
+    const flattenArray = [].concat(...array);
+    const genres = [...new Set(flattenArray)];
+
+    return genres;
   }
 
   showCardClicked(data) {
-
     this.router.navigate(['detail', data]);
-
   }
-
-  public filterPopularShows(): Show[] {
-
-    const shows = Object.assign([], this.shows);
-    const sorted = shows.sort((a, b) => (b.rating.average) - (a.rating.average));
-    return sorted.slice(0, 5);
-
-  }
-
-  public filterGenres(): any {
-
-    const array = this.shows.map(data => data.genres);
-    const merged = [].concat.apply([], array);
-    const filtered = [...new Set(merged)];
-    return filtered;
-
-  }
-
 
 }

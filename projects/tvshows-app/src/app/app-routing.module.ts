@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ShowDetailsPageComponent } from './pages/show-details-page/show-details-page.component';
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
-import { AllTvShowsResolver } from '@mylib/core';
 import { GenrePageComponent } from './pages/genre-page/genre-page.component';
+import { TvShowsResolver } from '@mylib/core';
 
 const routes: Routes = [
-
   {
     path: 'home',
     component: HomePageComponent,
     resolve: {
-      shows: AllTvShowsResolver,
+      shows: TvShowsResolver,
     }
   },
   {
@@ -27,7 +26,7 @@ const routes: Routes = [
     path: 'genre/:genre',
     component: GenrePageComponent,
     resolve: {
-      shows: AllTvShowsResolver,
+      shows: TvShowsResolver,
     }
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

@@ -1,24 +1,26 @@
 <div class="genre-collection">
+
+  <h3>TV Shows Genres</h3>
+
   <div fxShow.gt-xs
        fxHide
-       class="genre-collection__genresList">
-
-    <p>TV genres</p>
+       class="genre-collection__genres-list">
     <button mat-raised-button
             (click)="viewAll(genre)"
-            class="genre-collection__genreButton"
+            class="genre-collection__genre-btn"
             *ngFor="let genre of genres">{{genre}}</button>
   </div>
-  <h3>TV Shows by Genre</h3>
-  <div *ngFor="let genre of genres">
+
+  <div *ngFor="let genre of genres"
+       class="genre-collection__shows">
     <button mat-button
             color="accent"
             (click)="viewAll(genre)"
-            class="genre-collection__genreName"> {{genre}}</button>
+            class="genre-collection__genre-name"> {{genre}}</button>
     <a mat-button
        class="genre-collection__viewall"
        (click)="viewAll(genre)">View All</a>
-    <section class="genre-collection__cardsList">
+    <section class="genre-collection__cards-list">
       <ng-container *ngFor="let show of shows; ">
         <ng-container *ngIf="show.genres.includes(genre) ">
           <f-tvshows-show-card [show]="show"
@@ -28,4 +30,5 @@
       </ng-container>
     </section>
   </div>
+
 </div>
