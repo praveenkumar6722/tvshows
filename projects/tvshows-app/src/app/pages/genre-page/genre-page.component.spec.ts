@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { GenrePageComponent } from './genre-page.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
-
+import { GenrePageComponent } from './genre-page.component';
+import { shows } from 'test/mock/models';
 
 describe('GenrePageComponent', () => {
   let component: GenrePageComponent;
@@ -12,7 +11,7 @@ describe('GenrePageComponent', () => {
   const routeMock = {
     snapshot: {
       paramMap: convertToParamMap({ id: '1' }),
-      data: { shows: [] }
+      data: { shows }
     }
   };
 
