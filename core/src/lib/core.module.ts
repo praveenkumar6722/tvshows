@@ -1,12 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CoreComponent } from './core.component';
-
-
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpCachingInterceptor } from './http/interceptor/http-caching.interceptor';
 
 @NgModule({
-  declarations: [CoreComponent],
-  imports: [
+  declarations: [],
+  imports: [HttpClientModule
   ],
-  exports: [CoreComponent]
+  exports: []
 })
-export class CoreModule { }
+export class CoreModule {
+
+  public static forRoot(environment: any): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        { provide: 'environment', useValue: environment },
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: HttpCachingInterceptor,
+          multi: true
+        },
+      ]
+    };
+  }
+}

@@ -2,8 +2,17 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { Resource } from '@mylib/core';
+
+const endPoint = 'http://api.tvmaze.com';
+
 export const environment = {
-  production: false
+  production: false,
+  urls: {
+    [Resource.TvShows]: `${endPoint}/shows?page=0`,
+    [Resource.ShowDetails]: `${endPoint}/shows/`,
+    [Resource.Search]: `${endPoint}/search/shows/`,
+  }
 };
 
 /*

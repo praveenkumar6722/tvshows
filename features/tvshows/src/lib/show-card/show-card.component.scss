@@ -1,0 +1,31 @@
+@import "styling/variables/defaults.scss";
+
+.show-card {
+  min-width: 200px;
+  min-height: 280px;
+  margin: $margin-small-x;
+  cursor: pointer;
+  background-color: $background-color;
+  overflow: hidden;
+
+  &__image {
+    height: 250px;
+    width: 220px;
+  }
+
+  &__image:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+  }
+
+  &__content {
+    margin-top: $margin-medium-x;
+    width: 220px;
+    color: #eeeeee;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

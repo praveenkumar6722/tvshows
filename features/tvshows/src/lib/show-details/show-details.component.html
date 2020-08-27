@@ -1,0 +1,55 @@
+<div *ngIf="showDetails">
+
+
+  <mat-card class="show-details"
+            ngClass.gt-xs="show-details--gt-xs">
+    <img class="show-details__image"
+         [src]="showDetails.image?.original"
+         alt="Photo">
+    <mat-card-content class="show-details__content">
+      <h1> {{showDetails.name}}</h1>
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip color="accent"
+                  *ngFor="let item of showDetails.genres"
+                  selected>{{item}}</mat-chip>
+      </mat-chip-list>
+      <div class="show-details__summary"
+           [innerHTML]="showDetails.summary"></div>
+      <p *ngIf="showDetails.language">Language : {{showDetails.language}}</p>
+      <p *ngIf="showDetails.premiered">Premiered : {{showDetails.premiered}} | Runtime: {{showDetails.runtime}}</p>
+      <p *ngIf="showDetails.rating.average">Rating : {{showDetails.rating.average}}
+        <span class="material-icons">star_rate</span>
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-tab-group dynamicHeight
+                 class="show-details-tabs">
+    <mat-tab label="Episodes">
+      <div class="mat-elevation-z4 show-details-tabs__episodes"
+           fxFlex
+           fxLayout>
+        <mat-card *ngFor="let item of showDetails._embedded.episodes">
+          <img [attr.src]="item.image?.medium"
+               class="show-details-tabs__episodes-image"
+               alt="Photo">
+          <p>{{item.name}}</p>
+          <p>Season : {{item.season}} | Episode: {{item.number}}</p>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Cast">
+      <div class="mat-elevation-z4 show-details-tabs__cast"
+           fxFlex
+           fxLayout>
+        <mat-card *ngFor="let item of showDetails._embedded.cast">
+          <img [attr.src]="item.person.image?.medium"
+               alt="Photo">
+          <p>{{item.person.name}}</p>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+
+</div>

@@ -1,0 +1,19 @@
+@import "styling/variables/defaults.scss";
+
+.genre {
+
+  padding: $padding-medium-x;
+
+  &__header {
+    margin: 0px;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: $margin-large-x;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

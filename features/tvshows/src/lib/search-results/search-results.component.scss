@@ -1,0 +1,17 @@
+@import "styling/variables/defaults.scss";
+
+.search-results {
+  padding: $padding-medium-x;
+
+  &__header {
+    margin: 0 px;
+  }
+
+  &__content {
+    display: flex;
+    margin-top: $margin-large-x;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

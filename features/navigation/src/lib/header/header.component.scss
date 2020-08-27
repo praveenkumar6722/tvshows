@@ -1,0 +1,17 @@
+@import "styling/variables/defaults.scss";
+
+.header {
+  background-color: $background-color;
+  color: #eeeeee;
+
+  &__icon-account {
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0 $margin-small-x 0 $margin-medium-x;
+  }
+
+  &__icon-search {
+    cursor: pointer;
+    font-size: 100%;
+  }
+}

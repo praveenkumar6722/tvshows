@@ -1,0 +1,49 @@
+@import "styling/variables/defaults.scss";
+
+.genre-collection {
+  margin: 0 $margin-medium-x 0 $margin-medium-x;
+  color: #eeeeee;
+
+  h3 {
+    text-align: center;
+  }
+
+  &__genres-list {
+    text-align: center;
+    padding-bottom: $padding-large-x;
+  }
+
+  &__shows {
+    padding-top: $padding-medium-x;
+  }
+
+  &__genre-btn {
+    font-size: medium;
+    margin: $margin-small-x;
+    background-color: #7b8289;
+    border-radius: 18px;
+  }
+
+  &__genre-btn:hover {
+    background-color: #ffd740;
+  }
+
+  &__genre-name {
+    font-size: large;
+  }
+
+  &__viewall {
+    font-size: 12px;
+    cursor: pointer;
+    color: grey;
+  }
+
+  &__cards-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-left: $margin-medium-x;
+    margin-right: $margin-medium-x;
+    justify-content: flex-start;
+  }
+}

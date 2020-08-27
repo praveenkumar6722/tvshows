@@ -1,0 +1,48 @@
+@import "styling/variables/defaults.scss";
+
+.show-details {
+  &__image {
+    width: 300px;
+    height: 400px;
+  }
+
+  &__content {
+    margin: $margin-medium-x;
+  }
+
+  &__summary {
+    font-size: 20px;
+    ul {
+      font-size: 18px;
+    }
+  }
+}
+
+.show-details--gt-xs {
+  padding: $padding-xlarge-x;
+  display: flex;
+  flex-direction: row;
+}
+
+.show-details-tabs {
+  &__episodes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__episodes-image {
+    min-width: 250px;
+    min-height: 140px;
+  }
+
+  &__episodes-image:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+  }
+
+  &__cast {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
