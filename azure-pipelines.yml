@@ -17,10 +17,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g @angular/cli
+    npm install @angular/cli@8.3.29
     npm install
     npm run build:libs
-    ng build --prod
+    ng build
   displayName: 'npm install and build'
 - task: PublishBuildArtifacts@1
   inputs:
