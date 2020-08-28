@@ -1,7 +1,7 @@
 # TV Shows 
 
 
-This application is TV shows guide using Tvmaze API, where you can view all Tv shows, popular shows, show details and can search for shows. Applicaiton has been designed & built responsive and mobile friendly :computer: :iphone:
+This application is TV shows guide developed consuming Tvmaze REST API (http://www.tvmaze.com/api), where you can view all Tv shows, popular shows, show details, cast, episodes and can search for shows. Applicaiton has been designed & built responsive and mobile friendly :computer: :iphone:
 
 
 ### Prerequisite
@@ -27,10 +27,10 @@ npm install
 - This will build all the libraries
 
 ```
- npm run build:lib
+ npm run build:libs
 ```
 
-- Build individual libraries.
+- Build individual library
 
 ```
   ng build --libraryName--
@@ -44,7 +44,7 @@ npm install
  $ npm start tvshows-app
 ```
 
-### Unit tests
+### Unit Tests
 
 ```
  ng test --library/project--
@@ -103,7 +103,7 @@ npm install
 │       │   │   ├── app.component.spec.ts
 │       │   │   ├── app.component.ts
 │       │   │   ├── app.module.ts
-│       │   │   └── pages
+│       │   │   └── pages  // page components 
 │       │   │       ├── genre-page
 │       │   │       ├── home-page
 │       │   │       ├── search-results-page
