@@ -8,8 +8,7 @@
     "build:libs": "ng build core &&  ng build navigation && ng build tvshows",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:lib-prod": "npm run build:lib --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
