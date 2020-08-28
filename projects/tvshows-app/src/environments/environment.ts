@@ -4,7 +4,7 @@
 
 import { Resource } from '@mylib/core';
 
-const endPoint = 'http://api.tvmaze.com';
+const endPoint = 'https://api.tvmaze.com';
 
 export const environment = {
   production: false,
