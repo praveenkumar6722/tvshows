@@ -15,7 +15,6 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
 
-
     TestBed.configureTestingModule({
       imports: [FormsModule],
       declarations: [HeaderComponent],
@@ -24,14 +23,12 @@ describe('HeaderComponent', () => {
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(HeaderComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

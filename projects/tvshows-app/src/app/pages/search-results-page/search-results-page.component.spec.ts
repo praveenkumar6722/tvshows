@@ -12,14 +12,13 @@ describe('SearchResultsPageComponent', () => {
       declarations: [SearchResultsPageComponent],
       schemas: [NO_ERRORS_SCHEMA]
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(SearchResultsPageComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SearchResultsPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

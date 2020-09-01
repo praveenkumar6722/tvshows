@@ -13,14 +13,12 @@ describe('FooterComponent', () => {
       declarations: [FooterComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(FooterComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(FooterComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

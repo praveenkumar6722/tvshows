@@ -3,7 +3,6 @@ import { HomeContainerComponent } from './home-container.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 const showsMock = [
   {
     id: 1,
@@ -134,15 +133,14 @@ describe('HomeContainerComponent', () => {
       providers: [
         { provide: Router, useValue: routerMock },
       ],
-    }).compileComponents();
+    }).compileComponents().then(() => {
+      fixture = TestBed.createComponent(HomeContainerComponent);
+      component = fixture.componentInstance;
+      component.shows = showsMock;
+      fixture.detectChanges();
+    });
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeContainerComponent);
-    component = fixture.componentInstance;
-    component.shows = showsMock;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

@@ -19,14 +19,12 @@ describe('GenreComponent', () => {
         { provide: Router, useValue: routerMock },
       ],
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(GenreComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(GenreComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

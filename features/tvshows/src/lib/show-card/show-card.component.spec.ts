@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ShowCardComponent } from './show-card.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
@@ -12,14 +11,12 @@ describe('ShowCardComponent', () => {
       declarations: [ShowCardComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(ShowCardComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ShowCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
