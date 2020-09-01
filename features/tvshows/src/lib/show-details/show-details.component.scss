@@ -1,9 +1,19 @@
 @import "styling/variables/defaults.scss";
 
 .show-details {
+  background-color: $background-color;
+  color: $text-color;
+
   &__image {
-    width: 300px;
-    height: 400px;
+    text-align: center;
+    img {
+      width: 300px;
+      height: 400px;
+    }
+  }
+
+  &__name {
+    text-align: center;
   }
 
   &__content {
@@ -22,12 +32,23 @@
   padding: $padding-xlarge-x;
   display: flex;
   flex-direction: row;
+
+  .show-details {
+    &__name {
+      text-align: left;
+    }
+  }
 }
 
 .show-details-tabs {
   &__episodes {
     flex-wrap: wrap;
     justify-content: center;
+    background-color: $background-color;
+    mat-card {
+      background-color: $background-color;
+      color: $text-color;
+    }
   }
 
   &__episodes-image {
@@ -44,5 +65,10 @@
   &__cast {
     flex-wrap: wrap;
     justify-content: center;
+    background-color: $background-color;
+    mat-card {
+      background-color: $background-color;
+      color: $text-color;
+    }
   }
 }

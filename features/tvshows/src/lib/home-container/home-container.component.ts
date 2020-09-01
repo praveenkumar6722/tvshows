@@ -25,10 +25,8 @@ export class HomeContainerComponent implements OnInit {
   }
 
   getPopularShows(): Show[] {
-    const shows = [...this.shows];
-    const sorted = shows.sort((a, b) => (b.rating.average) - (a.rating.average));
 
-    return sorted.slice(0, 5);
+    return this.shows.sort((a, b) => (b.rating.average) - (a.rating.average)).slice(0, 5);
   }
 
   getGenres(): any {

@@ -149,7 +149,7 @@ describe('HomeContainerComponent', () => {
   describe('getGenres', () => {
     it('should return all genres', () => {
       component.shows = showsMock;
-      const expected = ['Drama', 'Science-Fiction', 'Thriller', 'Action', 'Crime'];
+      const expected = ['Action', 'Crime', 'Science-Fiction', 'Drama', 'Thriller', ];
       expect(component.getGenres()).toEqual(expected);
     });
   });

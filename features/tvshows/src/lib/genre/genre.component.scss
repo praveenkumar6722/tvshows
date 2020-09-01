@@ -1,12 +1,13 @@
 @import "styling/variables/defaults.scss";
 
 .genre {
-
   padding: $padding-medium-x;
+  background-color: $background-color;
 
   &__header {
     margin: 0px;
     text-align: center;
+    color: grey;
   }
 
   &__content {
