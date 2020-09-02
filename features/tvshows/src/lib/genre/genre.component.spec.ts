@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { GenreComponent } from './genre.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { GenreComponent } from './genre.component';
 
 describe('GenreComponent', () => {
   let component: GenreComponent;

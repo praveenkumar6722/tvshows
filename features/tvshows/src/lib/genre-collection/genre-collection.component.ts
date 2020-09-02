@@ -1,6 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { Show } from '@mylib/core';
 import { Router } from '@angular/router';
+
+import { Show } from '@mylib/core';
 
 @Component({
   selector: 'f-tvshows-genre-collection',

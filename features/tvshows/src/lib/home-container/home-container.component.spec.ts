@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeContainerComponent } from './home-container.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { HomeContainerComponent } from './home-container.component';
 
 const showsMock = [
   {
@@ -149,7 +150,7 @@ describe('HomeContainerComponent', () => {
   describe('getGenres', () => {
     it('should return all genres', () => {
       component.shows = showsMock;
-      const expected = ['Drama', 'Science-Fiction', 'Thriller', 'Action', 'Crime'];
+      const expected = ['Action', 'Crime', 'Science-Fiction', 'Drama', 'Thriller', ];
       expect(component.getGenres()).toEqual(expected);
     });
   });

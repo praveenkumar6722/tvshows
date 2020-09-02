@@ -5,7 +5,11 @@
          [attr.src]="show.image?.original"
          alt="Photo">
     <mat-card-content class="show-card__content">
-      {{show.name}} {{show.rating.average}}
+      {{show.name}}
+      <span *ngIf="show.rating.average"
+            class="show-card__rating">
+        ( {{show.rating.average}}<span class="material-icons">star_rate</span>)
+      </span>
     </mat-card-content>
   </mat-card>
 </ng-container>

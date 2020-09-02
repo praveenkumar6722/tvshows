@@ -1,7 +1,8 @@
-.popuplar-shows {
+@import "styling/variables/defaults.scss";
 
+.popuplar-shows {
   &__name {
-    color: #eeeeee;
+    color: $text-color;
     text-align: center;
     h1 {
       margin-bottom: 0px;
@@ -16,5 +17,4 @@
   &__button {
     text-align: center;
   }
-
 }

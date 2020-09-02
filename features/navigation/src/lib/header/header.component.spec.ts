@@ -34,11 +34,16 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to search when method search is called', () => {
+  it('should navigate to search when method search is called with search string', () => {
     component.searchString = 'fire';
     component.search();
-    const path = 'search';
-    expect(router.navigate).toHaveBeenCalledWith([path], { queryParams: { phrase: 'fire' } });
+    expect(router.navigate).toHaveBeenCalledWith(['search'], { queryParams: { phrase: 'fire' } });
+  });
+
+  it('should not navigate to search when method search is called with empty search string', () => {
+    component.searchString = '';
+    component.search();
+    expect(router.navigate).not.toHaveBeenCalledWith(['search'], { queryParams: { phrase: 'fire' } });
   });
 
 });

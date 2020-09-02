@@ -1,9 +1,10 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePageComponent } from './home-page.component';
-import { CoreModule } from '@mylib/core';
-import { BaseMaterialModule } from 'core/src/public-api';
+
+import { CoreModule, BaseMaterialModule } from '@mylib/core';
 import { TvshowsModule } from '@mylib/tvshows';
+
+import { HomePageComponent } from './home-page.component';
 
 
 
