@@ -44,7 +44,9 @@ npm install
  $ npm start tvshows-app
 ```
 
-### Unit Tests
+### Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ```
  ng test --library/project--
@@ -52,8 +54,15 @@ npm install
  Example: ng test tvshows-app
 ```
 
+### Running end-to-end tests
 
-##  Workspace folder structure
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+
+
+
+
+###  Workspace folder structure
 ```
 .
 ├── README.md
@@ -126,6 +135,16 @@ npm install
 ├── tsconfig.json
 └── tslint.json
 ```
+
+#### Style Guide  
+
+- Separate filenames with dots and dashes
+- Symbols and file names : Do use upper camel case for class names, Do give the filename the conventional suffix (such as .component.ts, .directive.ts, .module.ts, .pipe.ts, or .service.ts) for a file of that type.
+- Properties and methods : Do use lower camel case to name properties and methods.
+- Service names : Do suffix a service class name with Service. For example, something that gets data or heroes should be called a DataService or a HeroService.
+- Component selectors : Do use dashed-case or kebab-case for naming the element selectors of components.
+- Unit test file names : Do name test specification files the same as the component they test. Do name test specification files with a suffix of .spec.
+- End-to-End (E2E) test file names : Do name end-to-end test specification files after the feature they test with a suffix of .e2e-spec.
 
 #### Tooling
 

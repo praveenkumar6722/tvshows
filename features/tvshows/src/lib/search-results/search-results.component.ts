@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { flatMap, tap, map } from 'rxjs/operators';
+import { flatMap, map } from 'rxjs/operators';
+
 import { RouteService } from '@mylib/core';
 
 @Component({

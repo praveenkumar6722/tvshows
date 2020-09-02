@@ -1,7 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+
+import { HttpApiService } from '../http/http-api.service';
 import { RouteService } from './route.service';
-import { HttpApiService } from '../http/public_api';
+
 import { HttpApiServiceMock } from 'test/mock/http-api.service.mock';
 import { shows, show, search } from 'test/mock/models';
 

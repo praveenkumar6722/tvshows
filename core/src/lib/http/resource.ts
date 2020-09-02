@@ -4,7 +4,7 @@
  */
 
 export const Resource = {
-  TvShows: 'tvshows',
-  ShowDetails: 'showDetails',
+  TvShows: 'tv-shows',
+  ShowDetails: 'show-details',
   Search: 'search'
 };
