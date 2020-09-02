@@ -18,17 +18,20 @@ export class HttpApiService {
   }
 
   public get<T>(
-    resource: string,
+    resource: any,
     path?: string,
     headers?: { [header: string]: string },
   ): Observable<T> {
 
     let url = this.getEndpoint(this.environment, resource);
     if (path) { url = url + path; }
+
     return this.http.get<T>(url, { headers });
   }
 
-  public getEndpoint(environment, name: string): any {
+  public getEndpoint(environment: any, name: string): any {
+
+
     if (!environment.urls[name]) {
       console.error(name + ' is not available in the current environment. Please add it to the appropiate environment.ts');
     }

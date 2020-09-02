@@ -3,8 +3,8 @@
  * Lists all resource/operation endpoints.
  */
 
-export const Resource = {
-  TvShows: 'tv-shows',
-  ShowDetails: 'show-details',
-  Search: 'search'
-};
+export enum Resource {
+  TvShows = 'TvShows',
+  ShowDetails = 'ShowDetails',
+  Search = 'Search'
+}

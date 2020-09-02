@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Show, SearchResults } from '../model/show';
 import { HttpApiService } from '../http/http-api.service';
 import { Resource } from '../http/resource';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

@@ -10,25 +10,26 @@
       <h1 class="show-details__name"> {{showDetails.name}}</h1>
       <mat-chip-list aria-label="Fish selection"
                      class="show-details__genres">
-        <mat-chip color="accent"
+        <mat-chip color="none"
                   *ngFor="let item of showDetails.genres"
                   selected>{{item}}</mat-chip>
       </mat-chip-list>
       <div class="show-details__summary"
            [innerHTML]="showDetails.summary"></div>
+      <p *ngIf="showDetails.rating.average">Rating : {{showDetails.rating.average}}
+        <span class="material-icons show-details__icon-star">star_rate</span>
+      </p>
       <p *ngIf="showDetails.language">Language : {{showDetails.language}}</p>
       <p *ngIf="showDetails.premiered">Premiered : {{showDetails.premiered}} | Runtime: {{showDetails.runtime}}</p>
-      <p *ngIf="showDetails.rating.average">Rating : {{showDetails.rating.average}}
-        <span class="material-icons">star_rate</span>
-      </p>
     </mat-card-content>
   </mat-card>
 
-  <mat-tab-group dynamicHeight
-                 color="accent"
+  <mat-tab-group color="accent"
                  class="show-details-tabs">
-    <mat-tab label="Episodes"
-             color="accent">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="show-details-tabs__name">Episodes</span>
+      </ng-template>
       <div class="mat-elevation-z4 show-details-tabs__episodes"
            fxFlex
            fxLayout>
@@ -41,8 +42,11 @@
         </mat-card>
       </div>
     </mat-tab>
-    <mat-tab label="Cast"
-             color="accent">
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="show-details-tabs__name">Cast</span>
+      </ng-template>
       <div class="mat-elevation-z4 show-details-tabs__cast"
            fxFlex
            fxLayout>
