@@ -3,11 +3,12 @@
 .genre {
   padding: $padding-medium-x;
   background-color: $background-color;
+  min-height: 100vh;
 
   &__header {
     margin: 0px;
     text-align: center;
-    color: grey;
+    color: $text-color;
   }
 
   &__content {

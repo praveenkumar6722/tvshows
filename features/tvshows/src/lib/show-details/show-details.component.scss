@@ -4,6 +4,15 @@
   background-color: $background-color;
   color: $text-color;
 
+  &__chip {
+    border: 2px $text-color-accent solid;
+    background-color: $background-color !important;
+  }
+
+  &__icon-star {
+    color: $text-color-accent;
+  }
+
   &__image {
     text-align: center;
     img {
@@ -41,7 +50,11 @@
 }
 
 .show-details-tabs {
-  background-color: grey;
+  background-color: $background-color;
+
+  &__name {
+    color: $text-color;
+  }
 
   &__episodes {
     flex-wrap: wrap;
