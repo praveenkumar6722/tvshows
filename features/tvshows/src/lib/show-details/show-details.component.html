@@ -8,7 +8,8 @@
 
     <mat-card-content class="show-details__content">
       <h1 class="show-details__name"> {{showDetails.name}}</h1>
-      <mat-chip-list aria-label="Fish selection">
+      <mat-chip-list aria-label="Fish selection"
+                     class="show-details__genres">
         <mat-chip color="accent"
                   *ngFor="let item of showDetails.genres"
                   selected>{{item}}</mat-chip>
@@ -33,9 +34,9 @@
            fxLayout>
         <mat-card *ngFor="let item of showDetails._embedded.episodes">
           <img [attr.src]="item.image?.medium"
-               class="show-details-tabs__episodes-image"
+               class="show-details-tabs__episode-image"
                alt="Photo">
-          <p>{{item.name}}</p>
+          <p class="show-details-tabs__episode-name">{{item.name}}</p>
           <p>Season : {{item.season}} | Episode: {{item.number}}</p>
         </mat-card>
       </div>

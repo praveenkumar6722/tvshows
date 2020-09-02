@@ -23,6 +23,7 @@
        fxLayoutAlign="end">
     <mat-form-field floatLabel='never'>
       <input type="text"
+             name="search"
              matInput
              placeholder="search"
              [(ngModel)]="searchString"
@@ -38,6 +39,7 @@
       <button mat-button
               matSuffix
               mat-icon-button
+              id="btn-search"
               aria-label="Clear"
               (click)="search()">
         <mat-icon>search</mat-icon>

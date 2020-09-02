@@ -51,15 +51,22 @@
     }
   }
 
-  &__episodes-image {
+  &__episode-image {
     min-width: 250px;
     min-height: 140px;
   }
 
-  &__episodes-image:hover {
+  &__episode-image:hover {
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari 3-8 */
     transform: scale(1.1);
+  }
+
+  &__episode-name {
+    white-space: nowrap;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__cast {
