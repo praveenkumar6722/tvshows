@@ -1,8 +1,9 @@
 @import "styling/variables/defaults.scss";
 
 .header {
+  border-bottom: 1px solid black;
   background-color: $background-color;
-  color: #eeeeee;
+  color: $text-color;
 
   &__icon-account {
     cursor: pointer;

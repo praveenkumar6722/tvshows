@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { TvShowsResolver } from '@mylib/core';
+
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ShowDetailsPageComponent } from './pages/show-details-page/show-details-page.component';
 import { SearchResultsPageComponent } from './pages/search-results-page/search-results-page.component';
 import { GenrePageComponent } from './pages/genre-page/genre-page.component';
-import { TvShowsResolver } from '@mylib/core';
+
+
 
 const routes: Routes = [
   {

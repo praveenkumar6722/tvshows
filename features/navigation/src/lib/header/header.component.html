@@ -1,43 +1,67 @@
 <mat-toolbar class="header">
-  <div fxShow fxHide.gt-sm>
-    <button mat-icon-button (click)="sidenav.toggle()">
+  <div fxShow
+       fxHide.gt-sm>
+    <button mat-icon-button
+            (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
 
-  <a mat-button routerLink="/home">
-    <span fxShow fxHide.gt-sm class="material-icons">tv
+  <a mat-button
+     routerLink="/home">
+    <span fxShow
+          fxHide.gt-sm
+          class="material-icons">tv
     </span>
-    <h1 fxShow.gt-sm fxHide>
+    <h1 fxShow.gt-sm
+        fxHide>
       TV Shows
     </h1>
   </a>
-  <div fxFlex fxLayout fxLayoutAlign="end">
+  <div fxFlex
+       fxLayout
+       fxLayoutAlign="end">
     <mat-form-field floatLabel='never'>
-      <input type="text" matInput placeholder="search" [(ngModel)]="searchString" (keyup.enter)="search()">
-      <button mat-button *ngIf="searchString" matSuffix mat-icon-button aria-label="Clear" (click)="searchString=''">
+      <input type="text"
+             name="search"
+             matInput
+             placeholder="search"
+             [(ngModel)]="searchString"
+             (keyup.enter)="search()">
+      <button mat-button
+              *ngIf="searchString"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="searchString=''">
         <mat-icon>close</mat-icon>
       </button>
-      <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="search()">
+      <button mat-button
+              matSuffix
+              mat-icon-button
+              id="btn-search"
+              aria-label="Clear"
+              (click)="search()">
         <mat-icon>search</mat-icon>
       </button>
 
     </mat-form-field>
   </div>
-
+  <!--
   <div fxHide.lt-sm>
     <span class="material-icons header__icon-account">
       account_circle
     </span>
-  </div>
+  </div> -->
 
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over">
+  <mat-sidenav #sidenav
+               mode="over">
     <div fxLayout="column">
-      <a mat-button routerLink="/"> Account </a>
-      <a mat-button routerLink="/"> Movies </a>
+      <a mat-button
+         routerLink="/home"> Home </a>
     </div>
   </mat-sidenav>
 

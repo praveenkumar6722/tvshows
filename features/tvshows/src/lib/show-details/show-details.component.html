@@ -1,14 +1,15 @@
 <div *ngIf="showDetails">
-
-
   <mat-card class="show-details"
             ngClass.gt-xs="show-details--gt-xs">
-    <img class="show-details__image"
-         [src]="showDetails.image?.original"
-         alt="Photo">
+    <div class="show-details__image">
+      <img [src]="showDetails.image?.original"
+           alt="Photo">
+    </div>
+
     <mat-card-content class="show-details__content">
-      <h1> {{showDetails.name}}</h1>
-      <mat-chip-list aria-label="Fish selection">
+      <h1 class="show-details__name"> {{showDetails.name}}</h1>
+      <mat-chip-list aria-label="Fish selection"
+                     class="show-details__genres">
         <mat-chip color="accent"
                   *ngFor="let item of showDetails.genres"
                   selected>{{item}}</mat-chip>
@@ -24,21 +25,24 @@
   </mat-card>
 
   <mat-tab-group dynamicHeight
+                 color="accent"
                  class="show-details-tabs">
-    <mat-tab label="Episodes">
+    <mat-tab label="Episodes"
+             color="accent">
       <div class="mat-elevation-z4 show-details-tabs__episodes"
            fxFlex
            fxLayout>
         <mat-card *ngFor="let item of showDetails._embedded.episodes">
           <img [attr.src]="item.image?.medium"
-               class="show-details-tabs__episodes-image"
+               class="show-details-tabs__episode-image"
                alt="Photo">
-          <p>{{item.name}}</p>
+          <p class="show-details-tabs__episode-name">{{item.name}}</p>
           <p>Season : {{item.season}} | Episode: {{item.number}}</p>
         </mat-card>
       </div>
     </mat-tab>
-    <mat-tab label="Cast">
+    <mat-tab label="Cast"
+             color="accent">
       <div class="mat-elevation-z4 show-details-tabs__cast"
            fxFlex
            fxLayout>

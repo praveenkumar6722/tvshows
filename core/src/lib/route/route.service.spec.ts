@@ -1,11 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+
+import { HttpApiService } from '../http/http-api.service';
 import { RouteService } from './route.service';
-import { HttpApiService } from '../http/public_api';
+
 import { HttpApiServiceMock } from 'test/mock/http-api.service.mock';
 import { shows, show, search } from 'test/mock/models';
 
 describe('RouteService', () => {
+  let service: any;
   const httpApiServiceMock = new HttpApiServiceMock();
 
   const showsMockExpected = [
@@ -346,42 +349,33 @@ describe('RouteService', () => {
   ];
 
 
-
-
-  beforeEach(() => TestBed.configureTestingModule({
-    providers: [
-      { provide: HttpApiService, useValue: httpApiServiceMock },
-    ],
-  }));
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: HttpApiService, useValue: httpApiServiceMock },
+      ],
+    });
+    service = TestBed.get(RouteService);
+  });
 
   it('should be created', () => {
-    const service: RouteService = TestBed.get(RouteService);
     expect(service).toBeTruthy();
   });
 
-
   it('check getallTvShows returns expected response', () => {
-    const service: RouteService = TestBed.get(RouteService);
     spyOn(httpApiServiceMock, 'get').and.returnValue(of(shows));
     service.getallTvShows().subscribe(result => expect(result).toEqual(showsMockExpected));
-
   });
 
-
   it('check getSearchResults returns expected response', () => {
-    const service: RouteService = TestBed.get(RouteService);
     const phrase = 'disney';
     spyOn(httpApiServiceMock, 'get').and.returnValue(of(search));
     service.getSearchResults(phrase).subscribe(result => expect(result).toEqual(search));
   });
 
-
   it('check getShowDetails returns expected response', () => {
-    const service: RouteService = TestBed.get(RouteService);
     const id = 1;
     spyOn(httpApiServiceMock, 'get').and.returnValue(of(show));
     service.getShowDetails(id).subscribe(result => expect(result).toEqual(detailsMock));
   });
-
-
 });

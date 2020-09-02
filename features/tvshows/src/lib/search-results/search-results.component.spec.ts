@@ -1,7 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SearchResultsComponent } from './search-results.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SearchResultsComponent } from './search-results.component';
 import { Router, ActivatedRoute, convertToParamMap } from '@angular/router';
 import { RouteService } from '@mylib/core';
 import { of } from 'rxjs';
@@ -37,14 +36,13 @@ describe('SearchResultsComponent', () => {
       ],
 
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(SearchResultsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SearchResultsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

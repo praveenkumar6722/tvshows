@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RouteService } from 'core/src/public-api';
-import { Show } from '@mylib/core';
+
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+
+import { Show, RouteService } from '@mylib/core';
 
 @Component({
   selector: 'app-show-details-page',

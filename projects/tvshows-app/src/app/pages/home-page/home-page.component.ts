@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Show } from '@mylib/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { Show } from '@mylib/core';
 
 
 @Component({

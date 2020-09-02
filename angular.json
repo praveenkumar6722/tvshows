@@ -118,7 +118,8 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "projects/tvshows-app/e2e/protractor.conf.js",
-            "devServerTarget": "tvshows-app:serve"
+            "devServerTarget": "tvshows-app:serve",
+            "port": 4201
           },
           "configurations": {
             "production": {

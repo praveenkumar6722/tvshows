@@ -1,10 +1,13 @@
 @import "styling/variables/defaults.scss";
 
 .search-results {
+  background-color: $background-color;
   padding: $padding-medium-x;
+  min-height: 100vh;
 
   &__header {
     margin: 0 px;
+    color: grey;
   }
 
   &__content {

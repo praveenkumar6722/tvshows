@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Show } from '@mylib/core';
 import { Router } from '@angular/router';
+
+import { Show } from '@mylib/core';
 
 @Component({
   selector: 'f-tvshows-home-container',
@@ -25,10 +26,8 @@ export class HomeContainerComponent implements OnInit {
   }
 
   getPopularShows(): Show[] {
-    const shows = [...this.shows];
-    const sorted = shows.sort((a, b) => (b.rating.average) - (a.rating.average));
 
-    return sorted.slice(0, 5);
+    return this.shows.sort((a, b) => (b.rating.average) - (a.rating.average)).slice(0, 5);
   }
 
   getGenres(): any {

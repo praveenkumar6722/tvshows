@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { GenreCollectionComponent } from './genre-collection.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { GenreCollectionComponent } from './genre-collection.component';
 
 describe('GenreCollectionComponent', () => {
   let component: GenreCollectionComponent;
@@ -19,14 +19,12 @@ describe('GenreCollectionComponent', () => {
         { provide: Router, useValue: routerMock },
       ],
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(GenreCollectionComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(GenreCollectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
