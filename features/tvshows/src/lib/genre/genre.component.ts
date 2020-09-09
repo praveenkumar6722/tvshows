@@ -18,7 +18,7 @@ export class GenreComponent {
 
   constructor(private router: Router) { }
 
-  cardClicked(data) {
+  cardClicked(data: number): void {
     this.router.navigate(['detail', data]);
   }
 

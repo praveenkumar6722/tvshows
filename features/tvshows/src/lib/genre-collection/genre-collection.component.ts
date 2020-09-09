@@ -14,18 +14,18 @@ export class GenreCollectionComponent {
   public shows: Show[];
 
   @Input()
-  public genres: string;
+  public genres: Set<string>;
 
   @Output()
-  public showCardClicked: EventEmitter<Show> = new EventEmitter<Show>();
+  public showCardClicked: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private router: Router) { }
 
-  public viewAll(genre: string) {
+  public viewAll(genre: string): void {
     this.router.navigate(['genre', genre]);
   }
 
-  public cardClicked(data) {
+  public cardClicked(data: number): void {
     this.showCardClicked.emit(data);
   }
 

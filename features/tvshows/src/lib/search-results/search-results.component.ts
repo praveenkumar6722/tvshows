@@ -30,7 +30,7 @@ export class SearchResultsComponent implements OnInit {
     });
   }
 
-  cardClicked(data) {
+  cardClicked(data: number): void {
     this.router.navigate(['detail', data]);
   }
 

@@ -150,7 +150,7 @@ describe('HomeContainerComponent', () => {
   describe('getGenres', () => {
     it('should return all genres', () => {
       component.shows = showsMock;
-      const expected = ['Action', 'Crime', 'Science-Fiction', 'Drama', 'Thriller', ];
+      const expected = new Set(['Action', 'Crime', 'Science-Fiction', 'Drama', 'Thriller']);
       expect(component.getGenres()).toEqual(expected);
     });
   });
@@ -165,7 +165,7 @@ describe('HomeContainerComponent', () => {
 
   describe('showCardClicked', () => {
     it('should navigate to /detail when method showCardClicked is called', () => {
-      const data = '1';
+      const data = 1;
       const path = 'detail';
       component.showCardClicked(data);
       expect(routerMock.navigate).toHaveBeenCalledWith([path, data]);

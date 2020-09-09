@@ -16,7 +16,7 @@ export class HomeContainerComponent implements OnInit {
 
   public popularShows: Show[];
 
-  public genres: string[];
+  public genres: Set<string>;
 
   constructor(private router: Router) { }
 
@@ -30,15 +30,14 @@ export class HomeContainerComponent implements OnInit {
     return this.shows.sort((a, b) => (b.rating.average) - (a.rating.average)).slice(0, 5);
   }
 
-  getGenres(): any {
+  getGenres(): Set<string> {
     const array = this.shows.map(data => data.genres);
     const flattenArray = [].concat(...array);
-    const genres = [...new Set(flattenArray)];
 
-    return genres;
+    return new Set(flattenArray);
   }
 
-  showCardClicked(data) {
+  showCardClicked(data: number): void {
     this.router.navigate(['detail', data]);
   }
 

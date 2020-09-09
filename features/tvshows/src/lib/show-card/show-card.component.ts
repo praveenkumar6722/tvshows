@@ -15,7 +15,7 @@ export class ShowCardComponent {
   @Output()
   public cardClicked: EventEmitter<number> = new EventEmitter<number>();
 
-  public clicked() {
+  public clicked(): void {
     this.cardClicked.emit(this.show.id);
   }
 

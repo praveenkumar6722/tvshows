@@ -31,7 +31,7 @@ describe('GenreComponent', () => {
   });
 
   it('should navigate to /detail when method cardClicked is called', () => {
-    const data = '1';
+    const data = 1;
     const path = 'detail';
     component.cardClicked(data);
     expect(routerMock.navigate).toHaveBeenCalledWith([path, data]);

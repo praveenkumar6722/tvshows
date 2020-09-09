@@ -49,7 +49,7 @@ describe('SearchResultsComponent', () => {
   });
 
   it('should navigate to detail when cardClicked method is called', () => {
-    const data = '1';
+    const data = 1;
     const path = 'detail';
     component.cardClicked(data);
     expect(routerMock.navigate).toHaveBeenCalledWith([path, data]);
